@@ -1,9 +1,46 @@
 <script setup>
 import Card from "./Card.vue";
+import { onMounted } from "vue";
+import useAxiosHandler from "../composables/useAxiosHandler";
+import { factStore } from "../stores/factStore";
 
-import { mainStore } from "../stores/mainStore";
+const store = factStore();
 
-const store = mainStore();
+function addNeededFields(getCardsQuotes) {
+  let stringifyData = JSON.stringify(getCardsQuotes);
+  let copyData = JSON.parse(stringifyData);
+
+  for (let i = 0; i < copyData.length; i++) {
+    if (i === copyData.length - 1) {
+      copyData[i].showCard = true;
+    } else {
+      copyData[i].showCard = false;
+    }
+    copyData[i].index = i;
+    copyData[i].inTrue = false;
+    copyData[i].inFalse = false;
+  }
+  return copyData;
+}
+
+try {
+  const getCardsQuotes = await useAxiosHandler().get("/quotes");
+  const results = addNeededFields(getCardsQuotes.data.results);
+
+  store.setCards(results);
+} catch (err) {
+  console.log("Error from API: " + err);
+}
+
+onMounted(() => {
+  console.log("Initially " + (window.navigator.onLine ? "on" : "off") + "line");
+
+  document
+    .getElementById("statusCheck")
+    .addEventListener("click", () =>
+      alert("internet is " + (window.navigator.onLine ? "on" : "off") + "line")
+    );
+});
 </script>
 
 <template>
@@ -51,6 +88,7 @@ const store = mainStore();
   position: relative;
   width: 30em;
   height: 100%;
+  min-height: 100em;
 }
 
 .dropzone:not(.cardContainer) {

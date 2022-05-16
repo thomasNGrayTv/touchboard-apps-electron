@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 
-export const mainStore = defineStore({
-  id: "mainStore",
+export const factStore = defineStore({
+  id: "factStore",
   state: () => {
     return {
       cards: [],
@@ -21,6 +21,7 @@ export const mainStore = defineStore({
     addToSavedCards(card) {
       const index = card.index;
       this.cards[index].inTrue = true;
+      this.cards[index].inFalse = false;
 
       const alreadyThere = this.cards.some(
         (c) => c.showCard === true && c.inFalse === false && c.inTrue === false
@@ -34,11 +35,6 @@ export const mainStore = defineStore({
           this.cards[found.index].showCard = true;
         }
       }
-
-      // if (!this.savedCards.some((c) => c._id == card._id)) {
-      //   this.savedCards.push(card);
-      //   // this.cards = this.cards.filter((c) => c._id !== card._id);
-      // }
     },
     addToCards(card) {
       const index = card.index;
@@ -60,6 +56,7 @@ export const mainStore = defineStore({
     removeFromCards(card) {
       const index = card.index;
       this.cards[index].inFalse = true;
+      this.cards[index].inTrue = false;
       const alreadyThere = this.cards.some(
         (c) => c.showCard === true && c.inFalse === false && c.inTrue === false
       );

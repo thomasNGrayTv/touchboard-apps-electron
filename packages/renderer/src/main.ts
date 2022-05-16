@@ -6,18 +6,7 @@ import { createPinia } from "pinia";
 
 import { createRouter, createWebHashHistory } from "vue-router";
 
-const routes = [
-  {
-    path: "/",
-    name: "main-page",
-    component: () => import("./pages/MainPage.vue"),
-  },
-  {
-    path: "/saved-quotes",
-    name: "saved-quotes",
-    component: () => import("./pages/SavedQuotes.vue"),
-  },
-];
+import { routes } from "./routes";
 
 const router = createRouter({
   history: createWebHashHistory(),

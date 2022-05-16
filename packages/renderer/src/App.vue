@@ -1,28 +1,17 @@
-<script lang="ts" setup>
-import MainPage from "./pages/MainPage.vue";
-</script>
+<script lang="ts" setup></script>
 
 <template>
-  <Suspense>
-    <template #default>
-      <MainPage></MainPage>
-    </template>
-    <template #fallback>
-      <div class="loaderContainer relative flex w-24 h-7">
-        Loading Cards....
-      </div>
-    </template>
-  </Suspense>
+  <router-link :to="{ name: 'main-page' }">Main Page</router-link>
+  <router-link :to="{ name: 'fact-finder' }">Fact Finder</router-link>
+  <router-view></router-view>
 </template>
 
 <style>
 body {
   box-sizing: border-box;
 }
-.loaderContainer {
-  top: 2em;
-  left: 1em;
-  width: 98%;
-  height: 100%;
+
+body a {
+  margin: 1em;
 }
 </style>

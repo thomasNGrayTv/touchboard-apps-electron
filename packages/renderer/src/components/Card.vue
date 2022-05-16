@@ -1,8 +1,8 @@
 <script setup>
 import interact from "interactjs";
-import { mainStore } from "../stores/mainStore";
+import { factStore } from "../stores/factStore";
 
-const store = mainStore();
+const store = factStore();
 let dynamicTargets = [];
 
 defineProps({
