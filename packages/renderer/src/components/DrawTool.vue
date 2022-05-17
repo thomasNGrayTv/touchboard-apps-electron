@@ -200,7 +200,8 @@ onMounted(() => {
       <div class="btn-row">
         <button
           type="button"
-          v-on:click="removeAllHistory"
+          @touchstart.prevent="removeAllHistory"
+          v-on:click.prevent="removeAllHistory"
           v-bind:class="{ disabled: !history.length }"
           title="Clear all"
         >
@@ -215,7 +216,8 @@ onMounted(() => {
       <div class="btn-row">
         <button
           title="Pick a brush size"
-          v-on:click="popups.showSize = !popups.showSize"
+          @touchstart.prevent="popups.showSize = !popups.showSize"
+          v-on:click.prevent="popups.showSize = !popups.showSize"
           v-bind:class="{ active: popups.showSize }"
         >
           <svg class="svg-icon" viewBox="0 0 20 20">
@@ -248,7 +250,8 @@ onMounted(() => {
       <div class="btn-row">
         <button
           title="Pick a color"
-          v-on:click="popups.showColor = !popups.showColor"
+          @touchstart.prevent="popups.showColor = !popups.showColor"
+          v-on:click.prevent="popups.showColor = !popups.showColor"
           v-bind:class="{ active: popups.showColor }"
         >
           <svg class="svg-icon" viewBox="0 0 20 20">

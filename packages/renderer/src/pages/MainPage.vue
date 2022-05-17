@@ -10,6 +10,7 @@
     <label for="key">API Key:</label>
     <input type="text" id="key" name="station_key" />
   </p>
+  <button>Submit</button>
 </template>
 
 <style>

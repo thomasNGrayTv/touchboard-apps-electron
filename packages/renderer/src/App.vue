@@ -68,38 +68,47 @@ const DrawTool = defineAsyncComponent(() =>
 </script>
 
 <template>
-  <div class="globalTools">
-    <button
-      class="navItem"
-      @click="showNavMenu = !showNavMenu"
-      title="toggle navigation"
-    >
-      <img src="./assets/nav_hamburger.png" alt="toggle navigation menu" />
-    </button>
-    <button class="navItem" @click="showDraw = !showDraw" title="draw tool">
-      <img src="./assets/pencilIcon.png" alt="draw tool" />
-    </button>
-    <button class="navItem" @click="toggleFullScreen" title="toggle fullscreen">
-      <img src="./assets/expandIcon.png" alt="toggle full screen" />
-    </button>
-  </div>
-  <div v-if="showNavMenu" class="navMenu">
-    <button
-      @click="router.push({ name: 'main-page' })"
-      class="navItem"
-      title="home screen"
-    >
-      <img src="./assets/homeIcon.png" alt="home icon" />
-    </button>
+  <header>
+    <div class="globalTools">
+      <button
+        class="navItem"
+        @touchstart.prevent="showNavMenu = !showNavMenu"
+        @click.prevent="showNavMenu = !showNavMenu"
+        title="toggle navigation"
+      >
+        <img src="./assets/nav_hamburger.png" alt="toggle navigation menu" />
+      </button>
+      <button class="navItem" @click="showDraw = !showDraw" title="draw tool">
+        <img src="./assets/pencilIcon.png" alt="draw tool" />
+      </button>
+      <button
+        class="navItem"
+        @click="toggleFullScreen"
+        title="toggle fullscreen"
+      >
+        <img src="./assets/expandIcon.png" alt="toggle full screen" />
+      </button>
+    </div>
+    <div v-if="showNavMenu" class="navMenu">
+      <button
+        @touchstart.prevent="router.push({ name: 'main-page' })"
+        @click.prevent="router.push({ name: 'main-page' })"
+        class="navItem"
+        title="home screen"
+      >
+        <img src="./assets/homeIcon.png" alt="home icon" />
+      </button>
 
-    <button
-      @click="router.push({ name: 'fact-finder' })"
-      class="navItem"
-      title="fact finder"
-    >
-      <img src="./assets/factFinderIcon.png" alt="fact finder icon" />
-    </button>
-  </div>
+      <button
+        @touchstart.prevent="router.push({ name: 'fact-finder' })"
+        @click.prevent="router.push({ name: 'fact-finder' })"
+        class="navItem"
+        title="fact finder"
+      >
+        <img src="./assets/factFinderIcon.png" alt="fact finder icon" />
+      </button>
+    </div>
+  </header>
 
   <div class="mainAppContainer">
     <router-view></router-view>
@@ -108,11 +117,16 @@ const DrawTool = defineAsyncComponent(() =>
 </template>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
 ::backdrop {
   background-color: transparent;
-}
-body a {
-  margin: 1em;
 }
 
 .mainAppContainer {

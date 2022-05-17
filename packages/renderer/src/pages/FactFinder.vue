@@ -29,7 +29,12 @@ async function handleSave() {
 
 <template>
   <div id="factFinderContainer">
-    <button v-if="store.cards.length" @click="handleSave()" class="btn-primary">
+    <button
+      v-if="store.cards.length"
+      @touchstart.prevent="handleSave()"
+      @click.prevent="handleSave()"
+      class="btn-primary"
+    >
       Save to File
     </button>
     <button id="statusCheck" class="btn-primary">Status Check</button>
