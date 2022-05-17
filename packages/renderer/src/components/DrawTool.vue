@@ -192,11 +192,7 @@ onMounted(() => {
     <canvas id="canvas"> </canvas>
     <div class="cursor" id="cursor"></div>
     <div class="controls">
-      <div class="btn-row">
-        <!-- <div class="history" title="history">
-          {{ history.length }}
-        </div> -->
-      </div>
+      <div class="btn-row"></div>
       <div class="btn-row">
         <button
           type="button"

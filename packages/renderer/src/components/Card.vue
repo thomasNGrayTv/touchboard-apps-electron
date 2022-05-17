@@ -133,17 +133,9 @@ window.dragMoveListener = dragMoveListener;
 </script>
 
 <template>
-  <div
-    class="card p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-500 dark:hover:bg-gray-500 flex flex-col justify-center"
-  >
-    <h3
-      class="cardTitle mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-    >
-      "{{ card.content }}"
-    </h3>
-    <p class="font-normal text-gray-700 dark:text-gray-400">
-      - {{ card.author }}
-    </p>
+  <div class="card">
+    <h3 class="cardTitle">"{{ card.content }}"</h3>
+    <p>- {{ card.author }}</p>
   </div>
 </template>
 
