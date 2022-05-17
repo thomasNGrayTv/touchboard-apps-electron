@@ -69,22 +69,34 @@ const DrawTool = defineAsyncComponent(() =>
 
 <template>
   <div class="globalTools">
-    <button class="navItem" @click="showNavMenu = !showNavMenu">
+    <button
+      class="navItem"
+      @click="showNavMenu = !showNavMenu"
+      title="toggle navigation"
+    >
       <img src="./assets/nav_hamburger.png" alt="toggle navigation menu" />
     </button>
-    <button class="navItem" @click="showDraw = !showDraw">
+    <button class="navItem" @click="showDraw = !showDraw" title="draw tool">
       <img src="./assets/pencilIcon.png" alt="draw tool" />
     </button>
-    <button class="navItem" @click="toggleFullScreen">
+    <button class="navItem" @click="toggleFullScreen" title="toggle fullscreen">
       <img src="./assets/expandIcon.png" alt="toggle full screen" />
     </button>
   </div>
   <div v-if="showNavMenu" class="navMenu">
-    <button @click="router.push({ name: 'main-page' })" class="navItem">
+    <button
+      @click="router.push({ name: 'main-page' })"
+      class="navItem"
+      title="home screen"
+    >
       <img src="./assets/homeIcon.png" alt="home icon" />
     </button>
 
-    <button @click="router.push({ name: 'fact-finder' })" class="navItem">
+    <button
+      @click="router.push({ name: 'fact-finder' })"
+      class="navItem"
+      title="fact finder"
+    >
       <img src="./assets/factFinderIcon.png" alt="fact finder icon" />
     </button>
   </div>
