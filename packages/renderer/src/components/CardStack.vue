@@ -73,43 +73,4 @@ onMounted(() => {
   </div>
 </template>
 
-<style>
-.cards {
-  top: 2em;
-  left: 1em;
-  width: 100%;
-  min-width: 100em;
-  height: 100%;
-  display: flex;
-  justify-content: space-around;
-}
-
-.cardContainer {
-  position: relative;
-  width: 30em;
-  height: 100%;
-  min-height: 100em;
-}
-
-.dropzone:not(.cardContainer) {
-  margin: 1em;
-  text-align: center;
-}
-
-h2 {
-  background-color: bisque;
-  padding: 1em 2em;
-  text-align: center;
-}
-
-.widthCustom1 {
-  min-width: 29em;
-}
-.widthCustom2 {
-  min-width: 29em;
-}
-.hCustom {
-  height: 100%;
-  min-height: 100em;
-}
-</style>
+<style></style>

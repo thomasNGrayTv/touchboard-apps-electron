@@ -147,34 +147,4 @@ window.dragMoveListener = dragMoveListener;
   </div>
 </template>
 
-<style scoped>
-.card {
-  min-width: 25em;
-  touch-action: none;
-  background: blue;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  display: flex;
-  padding: 1em 2em;
-  color: white;
-  border-radius: 10px;
-  opacity: 0;
-  z-index: -1;
-  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-.card.showCard,
-.card.placedCard {
-  opacity: 1;
-  z-index: 20;
-}
-
-.card.bg-green-200 {
-  background-color: rgb(43 200 43);
-}
-
-.card.bg-red-300 {
-  background-color: rgb(213, 8, 8);
-}
-</style>
+<style></style>

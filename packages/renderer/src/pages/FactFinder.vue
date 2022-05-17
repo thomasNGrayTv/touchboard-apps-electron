@@ -44,19 +44,10 @@ async function handleSave() {
         <CardStack></CardStack>
       </template>
       <template #fallback>
-        <div class="loaderContainer">Loading Cards....</div>
+        <div class="loaderContainer">Loading Quotes....</div>
       </template>
     </Suspense>
   </div>
 </template>
 
-<style>
-button.btn-primary {
-  margin: 1em;
-}
-.loaderContainer {
-  position: relative;
-  top: 2em;
-  left: 1em;
-}
-</style>
+<style></style>
