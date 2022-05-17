@@ -4,14 +4,7 @@ import "./samples/node-api";
 
 import { createPinia } from "pinia";
 
-import { createRouter, createWebHashHistory } from "vue-router";
-
-import { routes } from "./routes";
-
-const router = createRouter({
-  history: createWebHashHistory(),
-  routes,
-});
+import { router } from "./routes";
 
 const app = createApp(App);
 

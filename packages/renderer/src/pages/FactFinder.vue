@@ -46,7 +46,7 @@ async function handleSave() {
 </template>
 
 <style>
-button {
+button.btn-primary {
   margin: 1em;
 }
 .loaderContainer {

@@ -1,4 +1,6 @@
-export const routes = [
+import { createRouter, createWebHashHistory } from "vue-router";
+
+const routes = [
   {
     path: "/",
     name: "main-page",
@@ -10,3 +12,8 @@ export const routes = [
     component: () => import("../pages/FactFinder.vue"),
   },
 ];
+
+export const router = createRouter({
+  history: createWebHashHistory(),
+  routes,
+});
