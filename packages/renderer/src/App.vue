@@ -9,12 +9,17 @@ const DrawTool = defineAsyncComponent(() =>
 </script>
 
 <template>
-  <router-link :to="{ name: 'main-page' }">Main Page</router-link>
-  <router-link :to="{ name: 'fact-finder' }">Fact Finder</router-link>
-  <button @click="showDraw = !showDraw">Draw</button>
-
-  <router-view></router-view>
-  <DrawTool v-if="showDraw"></DrawTool>
+  <router-link class="navItem" :to="{ name: 'main-page' }"
+    >Main Page</router-link
+  >
+  <router-link class="navItem" :to="{ name: 'fact-finder' }"
+    >Fact Finder</router-link
+  >
+  <button class="navItem" @click="showDraw = !showDraw">Draw</button>
+  <div class="mainAppContainer">
+    <router-view></router-view>
+    <DrawTool v-if="showDraw"></DrawTool>
+  </div>
 </template>
 
 <style>
@@ -26,5 +31,13 @@ const DrawTool = defineAsyncComponent(() =>
 
 body a {
   margin: 1em;
+}
+
+.mainAppContainer {
+  position: relative;
+}
+
+.navItem {
+  z-index: 9999999;
 }
 </style>

@@ -275,7 +275,7 @@ onMounted(() => {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 99999;
 }
 button,
 input {
@@ -308,13 +308,14 @@ h5 {
   mix-blend-mode: difference;
   opacity: 0;
   transition: opacity 1s;
+  display: none;
 }
 
 canvas {
   width: 100%;
   height: calc(100vh - 60px);
   background-color: transparent;
-  cursor: none;
+  /* cursor: none; */
 }
 
 canvas:hover + .cursor {
