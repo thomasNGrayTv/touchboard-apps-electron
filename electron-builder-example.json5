@@ -16,7 +16,6 @@
       provider: "github",
       owner: "thomasNGrayTv",
       repo: "touchboard-apps-electron",
-      token: "personal-access-token-here",
     },
   },
   win: {
@@ -31,7 +30,6 @@
       provider: "github",
       owner: "thomasNGrayTv",
       repo: "touchboard-apps-electron",
-      token: "personal-access-token-here",
     },
   },
   nsis: {
