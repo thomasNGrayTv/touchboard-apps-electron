@@ -11,6 +11,11 @@ const routes = [
     name: "fact-finder",
     component: () => import("../pages/FactFinder.vue"),
   },
+  {
+    path: "/g-poll",
+    name: "g-poll",
+    component: () => import("../pages/GrayPoll.vue"),
+  },
 ];
 
 export const router = createRouter({
