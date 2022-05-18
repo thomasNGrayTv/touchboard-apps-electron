@@ -12,6 +12,11 @@
   mac: {
     artifactName: "${productName}_${version}.${ext}",
     target: ["dmg"],
+    publish: {
+      provider: "github",
+      owner: "thomasNGrayTv",
+      repo: "touchboard-apps-electron",
+    },
   },
   win: {
     target: [
@@ -21,11 +26,20 @@
       },
     ],
     artifactName: "${productName}_${version}.${ext}",
+    publish: {
+      provider: "github",
+      owner: "thomasNGrayTv",
+      repo: "touchboard-apps-electron",
+    },
   },
   nsis: {
     oneClick: false,
     perMachine: false,
     allowToChangeInstallationDirectory: true,
     deleteAppDataOnUninstall: false,
+  },
+  publish: {
+    provider: "github",
+    owner: "thomasNGrayTv",
   },
 }
