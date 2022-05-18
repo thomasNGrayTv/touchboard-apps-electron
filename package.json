@@ -1,5 +1,5 @@
 {
-  "name": "touchboard-factfinder-vue-vite",
+  "name": "touchboard-apps-electron",
   "version": "1.0.0",
   "main": "dist/main/index.cjs",
   "author": "草鞋没号 <308487730@qq.com>",
@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "node scripts/watch.mjs",
     "prebuild": "vue-tsc --noEmit --p packages/renderer/tsconfig.json && node scripts/build.mjs",
-    "build": "electron-builder",
+    "build": "electron-builder --win --publish never",
+    "deploy": "electron-builder --win --publish always",
     "init": "git config core.hooksPath .git/hooks/ && rm -rf .git/hooks && npx simple-git-hooks",
     "test:e2e": "npx playwright test",
     "test:e2e:headless": "npx playwright test --headed"
@@ -44,6 +45,7 @@
   ],
   "dependencies": {
     "axios": "^0.27.2",
+    "electron-updater": "^5.0.1",
     "interactjs": "^1.10.11",
     "pinia": "^2.0.14",
     "vue-router": "^4.0.15"
