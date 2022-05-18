@@ -2,6 +2,7 @@ import { app, BrowserWindow, shell, ipcMain, dialog } from "electron";
 import fs from "fs";
 import { release } from "os";
 import { join } from "path";
+import { autoUpdater } from "electron-updater";
 
 // Disable GPU Acceleration for Windows 7
 if (release().startsWith("6.1")) app.disableHardwareAcceleration();
@@ -49,6 +50,10 @@ async function createWindow() {
     if (url.startsWith("https:")) shell.openExternal(url);
     return { action: "deny" };
   });
+
+  win.once("ready-to-show", () => {
+    autoUpdater.checkForUpdatesAndNotify();
+  });
 }
 
 app.whenReady().then(createWindow);
@@ -90,4 +95,16 @@ ipcMain.handle("create-a-file", async (event, content: any) => {
   console.log(filePath);
   console.log("made it!");
   return filePath;
+});
+
+ipcMain.on("restart_app", () => {
+  autoUpdater.quitAndInstall();
+});
+
+//auto update
+autoUpdater.on("update-available", () => {
+  win!.webContents.send("update_available");
+});
+autoUpdater.on("update-downloaded", () => {
+  win!.webContents.send("update_downloaded");
 });
