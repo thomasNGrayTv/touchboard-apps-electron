@@ -13,7 +13,7 @@ Then copy the contents of the electron-builder-example.json5 file (located in th
 ![electronConfigSetup](https://user-images.githubusercontent.com/102999741/169410756-146d2aa3-6a9c-4e16-9101-536b927d422a.gif)
 
 
-You are now ready to deploy. To deploy this project run the following commands:
+You are now ready to deploy. To deploy this project run the following commands at the project's root directory level:
 
 ```bash
 npm install
