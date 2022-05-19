@@ -11,11 +11,13 @@ const message = document.getElementById("message");
 const restartButton = document.getElementById("restart-button");
 
 ipcRenderer.on("update_available", () => {
+  console.log("update available!");
   ipcRenderer.removeAllListeners("update_available");
   message.innerText = "A new update is available. Downloading now...";
   notification.classList.remove("hidden");
 });
 ipcRenderer.on("update_downloaded", () => {
+  console.log("update downloaded!");
   ipcRenderer.removeAllListeners("update_downloaded");
   message.innerText =
     "Update Downloaded. It will be installed on restart. Restart now?";

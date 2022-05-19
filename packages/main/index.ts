@@ -1,8 +1,20 @@
-import { app, BrowserWindow, shell, ipcMain, dialog } from "electron";
+import {
+  app,
+  BrowserWindow,
+  shell,
+  ipcMain,
+  dialog,
+  autoUpdater,
+} from "electron";
 import fs from "fs";
 import { release } from "os";
 import { join } from "path";
-import { autoUpdater } from "electron-updater";
+
+const server =
+  "https://github.com/thomasNGrayTv/touchboard-apps-electron/releases";
+const url = `${server}/update/${process.platform}/${app.getVersion()}`;
+
+autoUpdater.setFeedURL({ url });
 
 // Disable GPU Acceleration for Windows 7
 if (release().startsWith("6.1")) app.disableHardwareAcceleration();
@@ -52,7 +64,10 @@ async function createWindow() {
   });
 
   win.once("ready-to-show", () => {
-    autoUpdater.checkForUpdatesAndNotify();
+    autoUpdater.checkForUpdates();
+    setInterval(() => {
+      autoUpdater.checkForUpdates();
+    }, 60000);
   });
 }
 
