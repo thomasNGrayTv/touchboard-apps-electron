@@ -2,7 +2,7 @@
 
 For a fresh setup in a new repo, go ahead and click the "Use this template" button above. Then make sure to have a personal access token created. 
 
-If you're not creating a new repo from this project, just make sure Thomas has set you up as a contributor and gave you a copy of the personal access token.
+If you're not creating a new repo from this project, just make sure Thomas has set you up as a contributor and has given you a copy of the personal access token.
 
 ## Deployment
 
