@@ -13,7 +13,7 @@ Then copy the contents of the electron-builder-example.json5 file (located in th
 ![electronConfigSetup](https://user-images.githubusercontent.com/102999741/169410756-146d2aa3-6a9c-4e16-9101-536b927d422a.gif)
 
 
-Your are now ready to deploy. To deploy this project run the following commands:
+You are now ready to deploy. To deploy this project run the following commands:
 
 ```bash
 npm install
@@ -27,7 +27,7 @@ Once the deploy finishes, you should be able to see a new draft in the releases 
 - [Electron](https://www.electronjs.org/) - allows us to build cross-platform desktop apps with JavaScript, HTML, and CSS.
 - [Vue.js](https://vuejs.org/) - An approachable, performant and versatile framework for building web user interfaces.
 - [Vite](https://vitejs.dev/) - a build tool made by the creator of Vue.js, Vite aims to provide a faster and leaner development experience for modern web projects.
-- [Axios](https://axios-http.com/docs/intro) - a promise based HTTP Client for node.js (makes api calls to get needed data).
+- [Axios](https://axios-http.com/docs/intro) - a promise based HTTP Client for node.js (makes API calls to get needed data).
 - [Interact.js](https://interactjs.io/) - JavaScript drag and drop, resizing, and multi-touch gestures for modern browsers.
 - [Pinia](https://pinia.vuejs.org/) - Pinia is a store library for Vue, it allows you to share a state (data) across components/pages. 
 - [Vue-Router](https://router.vuejs.org/) - This is the official router for Vue.js. It allows you to dynamically render Vue components without reloading the page.
