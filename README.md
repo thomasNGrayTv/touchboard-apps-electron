@@ -8,7 +8,7 @@ If you're not creating a new repo from this project, just make sure Thomas has s
 
 Make sure Node.js is installed. You can get the latest version here: https://nodejs.org/en/download/
 
-Then copy the contents of the electron-builder-example.json5 file in the root directory of the project. Make a new file in the same directory called electron-builder.json5. Paste in the example file contents and add token field in the publish objects. Token value is the personal access token. Here is a demo:
+Then copy the contents of the electron-builder-example.json5 file in the root directory of the project. Make a new file in the same directory called electron-builder.json5. Paste in the example file contents and add token field in the publish objects. Token value is the personal access token. If you are doing this for a new repo, also make sure to update all instances of "owner" and "repo" to your own. Here is a demo:
 
 ![electronConfigSetup](https://user-images.githubusercontent.com/102999741/169410756-146d2aa3-6a9c-4e16-9101-536b927d422a.gif)
 
