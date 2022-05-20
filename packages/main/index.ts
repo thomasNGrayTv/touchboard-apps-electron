@@ -10,7 +10,7 @@ import fs from "fs";
 import { release } from "os";
 import { join } from "path";
 
-const server = 'https://touchboard-electron-autoupdate.vercel.app/';
+const server = 'https://touchboard-electron-autoupdate.vercel.app';
 const url = `${server}/update/${process.platform}/${app.getVersion()}`;
 
 autoUpdater.setFeedURL({ url });
