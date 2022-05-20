@@ -3,26 +3,23 @@ import {
   BrowserWindow,
   shell,
   ipcMain,
-  dialog,
-  autoUpdater
+  dialog
 } from "electron";
 import fs from "fs";
 import { release } from "os";
 import { join } from "path";
 
-const server = 'https://touchboard-electron-autoupdate.vercel.app';
-const url = `${server}/update/${process.platform}/${app.getVersion()}`;
+// const server = 'https://touchboard-electron-autoupdate.vercel.app';
+// const url = `${server}/update/${process.platform}/${app.getVersion()}`;
 
-autoUpdater.setFeedURL({ url });
+// autoUpdater.setFeedURL({ url });
 
-setInterval(() => {
-  autoUpdater.checkForUpdates();
-}, 60000)
+
 
 
 // require('update-electron-app')();
 
-// import { autoUpdater } from 'electron-updater';
+import { autoUpdater } from 'electron-updater';
 
 // const server =
 //   "https://github.com/thomasNGrayTv/touchboard-apps-electron/releases";
@@ -85,9 +82,12 @@ async function createWindow() {
   // });
 }
 
-// app.on('ready', function()  {
-//   autoUpdater.checkForUpdatesAndNotify();
-// });
+app.on('ready', function()  {
+  autoUpdater.checkForUpdatesAndNotify();
+    setInterval(() => {
+      autoUpdater.checkForUpdates();
+    }, 60000);
+});
 
 app.whenReady().then(createWindow);
 
