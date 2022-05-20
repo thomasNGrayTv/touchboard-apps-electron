@@ -15,8 +15,6 @@ import { join } from "path";
 // autoUpdater.setFeedURL({ url });
 
 
-
-
 // require('update-electron-app')();
 
 import { autoUpdater } from 'electron-updater';
@@ -74,18 +72,18 @@ async function createWindow() {
     return { action: "deny" };
   });
 
-  // win.once("ready-to-show", () => {
-  //   autoUpdater.checkForUpdates();
-  //   setInterval(() => {
-  //     autoUpdater.checkForUpdates();
-  //   }, 60000);
-  // });
+  win.once("ready-to-show", () => {
+    autoUpdater.checkForUpdatesAndNotify();
+    setInterval(() => {
+      autoUpdater.checkForUpdatesAndNotify();
+    }, 60000);
+  });
 }
 
 app.on('ready', function()  {
   autoUpdater.checkForUpdatesAndNotify();
     setInterval(() => {
-      autoUpdater.checkForUpdates();
+      autoUpdater.checkForUpdatesAndNotify();
     }, 60000);
 });
 
@@ -130,11 +128,11 @@ ipcMain.handle("create-a-file", async (event, content: any) => {
   return filePath;
 });
 
-// ipcMain.on("restart_app", () => {
-//   autoUpdater.quitAndInstall();
-// });
+ipcMain.on("restart_app", () => {
+  autoUpdater.quitAndInstall();
+});
 
-// //auto update
+//auto update
 // autoUpdater.on("update-available", () => {
 //   win!.webContents.send("update_available");
 // });

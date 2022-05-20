@@ -1,6 +1,6 @@
 {
   "name": "touchboard-apps-electron",
-  "version": "1.4.0",
+  "version": "1.4.4",
   "main": "dist/main/index.cjs",
   "author": "Thomas Nixon <thomas.nixon@gray.tv>",
   "license": "MIT",

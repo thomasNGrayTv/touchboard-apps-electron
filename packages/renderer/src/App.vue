@@ -1,36 +1,36 @@
 <script setup>
 import { defineAsyncComponent, ref } from "vue";
 import { router } from "./routes";
-// import { ipcRenderer } from "electron";
+import { ipcRenderer } from "electron";
 
 const showDraw = ref(false);
 const showNavMenu = ref(false);
 
-// const notification = document.getElementById("notification");
-// const message = document.getElementById("message");
-// const restartButton = document.getElementById("restart-button");
+const notification = document.getElementById("notification");
+const message = document.getElementById("message");
+const restartButton = document.getElementById("restart-button");
 
-// ipcRenderer.on("update_available", () => {
-//   console.log("update available!");
-//   ipcRenderer.removeAllListeners("update_available");
-//   message.innerText = "A new update is available. Downloading now...";
-//   notification.classList.remove("hidden");
-// });
-// ipcRenderer.on("update_downloaded", () => {
-//   console.log("update downloaded!");
-//   ipcRenderer.removeAllListeners("update_downloaded");
-//   message.innerText =
-//     "Update Downloaded. It will be installed on restart. Restart now?";
-//   restartButton.classList.remove("hidden");
-//   notification.classList.remove("hidden");
-// });
+ipcRenderer.on("update_available", () => {
+  console.log("update available!");
+  ipcRenderer.removeAllListeners("update_available");
+  message.innerText = "A new update is available. Downloading now...";
+  notification.classList.remove("hidden");
+});
+ipcRenderer.on("update_downloaded", () => {
+  console.log("update downloaded!");
+  ipcRenderer.removeAllListeners("update_downloaded");
+  message.innerText =
+    "Update Downloaded. It will be installed on restart. Restart now?";
+  restartButton.classList.remove("hidden");
+  notification.classList.remove("hidden");
+});
 
-// function closeNotification() {
-//   notification.classList.add("hidden");
-// }
-// function restartApp() {
-//   ipcRenderer.send("restart_app");
-// }
+function closeNotification() {
+  notification.classList.add("hidden");
+}
+function restartApp() {
+  ipcRenderer.send("restart_app");
+}
 
 function cancelFullScreen() {
   var el = document;
@@ -96,13 +96,13 @@ const DrawTool = defineAsyncComponent(() =>
 
 <template>
   <header>
-    <!-- <div id="notification" class="hidden">
+    <div id="notification" class="hidden">
       <p id="message"></p>
       <button id="close-button" @click="closeNotification()">Close</button>
       <button id="restart-button" @click="restartApp()" class="hidden">
         Restart
       </button>
-    </div> -->
+    </div>
     <div class="globalTools">
       <button
         class="navItem"
