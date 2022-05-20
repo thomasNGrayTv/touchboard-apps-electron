@@ -1,10 +1,4 @@
-import {
-  app,
-  BrowserWindow,
-  shell,
-  ipcMain,
-  dialog
-} from "electron";
+import { app, BrowserWindow, shell, ipcMain, dialog } from "electron";
 import fs from "fs";
 import { release } from "os";
 import { join } from "path";
@@ -14,10 +8,9 @@ import { join } from "path";
 
 // autoUpdater.setFeedURL({ url });
 
-
 // require('update-electron-app')();
 
-import { autoUpdater } from 'electron-updater';
+import { autoUpdater } from "electron-updater";
 
 // const server =
 //   "https://github.com/thomasNGrayTv/touchboard-apps-electron/releases";
@@ -72,19 +65,16 @@ async function createWindow() {
     return { action: "deny" };
   });
 
-  win.once("ready-to-show", () => {
+  win.webContents.on("did-finish-load", () => {
     autoUpdater.checkForUpdatesAndNotify();
-    setInterval(() => {
-      autoUpdater.checkForUpdatesAndNotify();
-    }, 60000);
   });
 }
 
-app.on('ready', function()  {
+app.on("ready", function () {
   autoUpdater.checkForUpdatesAndNotify();
-    setInterval(() => {
-      autoUpdater.checkForUpdatesAndNotify();
-    }, 60000);
+  setInterval(() => {
+    autoUpdater.checkForUpdatesAndNotify();
+  }, 60000);
 });
 
 app.whenReady().then(createWindow);
@@ -128,33 +118,42 @@ ipcMain.handle("create-a-file", async (event, content: any) => {
   return filePath;
 });
 
+// auto update
 ipcMain.on("restart_app", () => {
   autoUpdater.quitAndInstall();
 });
 
-//auto update
-// autoUpdater.on("update-available", () => {
-//   win!.webContents.send("update_available");
-// });
-// autoUpdater.on("update-downloaded", () => {
-//   win!.webContents.send("update_downloaded");
-// });
-
-autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
-  const dialogOpts = {
-    type: 'info',
-    buttons: ['Restart', 'Later'],
-    title: 'Application Update',
-    message: process.platform === 'win32' ? releaseNotes : releaseName,
-    detail: 'A new version has been downloaded. Restart the application to apply the updates.'
-  }
-
-  dialog.showMessageBox(dialogOpts).then((returnValue) => {
-    if (returnValue.response === 0) autoUpdater.quitAndInstall()
-  })
+autoUpdater.on("update-available", () => {
+  console.log("update available");
+  win!.webContents.send("update_available");
 });
 
-autoUpdater.on('error', message => {
-  console.error('There was a problem updating the application')
-  console.error(message)
+autoUpdater.on("update-downloaded", () => {
+  console.log("update downloaded");
+  win!.webContents.send("update_downloaded");
+});
+
+// autoUpdater.on("update-downloaded", (event, releaseNotes, releaseName) => {
+//   const dialogOpts = {
+//     type: "info",
+//     buttons: ["Restart", "Later"],
+//     title: "Application Update",
+//     message: process.platform === "win32" ? releaseNotes : releaseName,
+//     detail:
+//       "A new version has been downloaded. Restart the application to apply the updates.",
+//   };
+
+//   dialog
+//     .showMessageBox(dialogOpts)
+//     .then((returnValue) => {
+//       if (returnValue.response === 0) autoUpdater.quitAndInstall();
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// });
+
+autoUpdater.on("error", (message) => {
+  console.error("There was a problem updating the application");
+  console.error(message);
 });
