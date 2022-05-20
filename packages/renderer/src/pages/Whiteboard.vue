@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <h1>Whiteboard Page</h1>
+  <h1>WhiteBoard Page</h1>
 </template>
 
 <style></style>
