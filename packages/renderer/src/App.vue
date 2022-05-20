@@ -232,4 +232,36 @@ button.navItem {
 .hidden {
   display: none;
 }
+
+.whiteboardPageContainer #rotate-area {
+  height: 100%;
+  padding: 1rem;
+  overflow: hidden;
+  touch-action: none;
+}
+
+#arrow {
+  display: block;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+
+#angle-info {
+  color: #666;
+  font-size: 2em;
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+}
+#scale-element {
+  display: block;
+  max-width: 100%;
+  margin: 1rem auto;
+  touch-action: none;
+}
+
+#scale-element.reset {
+  transition: transform 0.3s ease-in-out;
+}
 </style>

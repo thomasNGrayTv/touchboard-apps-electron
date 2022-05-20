@@ -128,7 +128,6 @@ function dragMoveListener(event) {
   target.setAttribute("data-y", y);
 }
 
-// this function is used later in the resizing and gesture demos
 window.dragMoveListener = dragMoveListener;
 </script>
 
