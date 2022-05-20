@@ -9,9 +9,9 @@ import fs from "fs";
 import { release } from "os";
 import { join } from "path";
 
-require('update-electron-app')();
+// require('update-electron-app')();
 
-// import { autoUpdater } from 'electron-updater';
+import { autoUpdater } from 'electron-updater';
 
 // const server =
 //   "https://github.com/thomasNGrayTv/touchboard-apps-electron/releases";
@@ -73,6 +73,10 @@ async function createWindow() {
   //   }, 60000);
   // });
 }
+
+app.on('ready', function()  {
+  autoUpdater.checkForUpdatesAndNotify();
+});
 
 app.whenReady().then(createWindow);
 
