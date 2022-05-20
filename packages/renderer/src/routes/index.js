@@ -16,6 +16,11 @@ const routes = [
     name: "g-poll",
     component: () => import("../pages/GrayPoll.vue"),
   },
+  {
+    path: "/whiteboard",
+    name: "whiteboard",
+    component: () => import("../pages/WhiteBoard.vue"),
+  },
 ];
 
 export const router = createRouter({

@@ -149,6 +149,14 @@ const DrawTool = defineAsyncComponent(() =>
       >
         <img src="./assets/gpollIcon.png" alt="poll icon" />
       </button>
+      <button
+        @touchstart.prevent="router.push({ name: 'whiteboard' })"
+        @click.prevent="router.push({ name: 'whiteboard' })"
+        class="navItem"
+        title="whiteboard"
+      >
+        <img src="./assets/white_board.png" alt="whiteboard icon" />
+      </button>
     </div>
   </header>
 
