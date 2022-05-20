@@ -1,6 +1,6 @@
 {
   "name": "touchboard-apps-electron",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "main": "dist/main/index.cjs",
   "author": "Thomas Nixon <thomas.nixon@gray.tv>",
   "license": "MIT",
@@ -49,6 +49,11 @@
     "esbuild": "^0.14.39",
     "interactjs": "^1.10.11",
     "pinia": "^2.0.14",
+    "update-electron-app": "^2.0.1",
     "vue-router": "^4.0.15"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thomasNGrayTv/touchboard-apps-electron"
+}
 }

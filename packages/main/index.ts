@@ -4,17 +4,20 @@ import {
   shell,
   ipcMain,
   dialog,
-  autoUpdater,
 } from "electron";
 import fs from "fs";
 import { release } from "os";
 import { join } from "path";
 
-const server =
-  "https://github.com/thomasNGrayTv/touchboard-apps-electron/releases";
-const url = `${server}/update/${process.platform}/${app.getVersion()}`;
+require('update-electron-app')();
 
-autoUpdater.setFeedURL({ url });
+// import { autoUpdater } from 'electron-updater';
+
+// const server =
+//   "https://github.com/thomasNGrayTv/touchboard-apps-electron/releases";
+// const url = `${server}/update/${process.platform}/${app.getVersion()}`;
+
+// autoUpdater.setFeedURL({ url });
 
 // Disable GPU Acceleration for Windows 7
 if (release().startsWith("6.1")) app.disableHardwareAcceleration();
@@ -63,12 +66,12 @@ async function createWindow() {
     return { action: "deny" };
   });
 
-  win.once("ready-to-show", () => {
-    autoUpdater.checkForUpdates();
-    setInterval(() => {
-      autoUpdater.checkForUpdates();
-    }, 60000);
-  });
+  // win.once("ready-to-show", () => {
+  //   autoUpdater.checkForUpdates();
+  //   setInterval(() => {
+  //     autoUpdater.checkForUpdates();
+  //   }, 60000);
+  // });
 }
 
 app.whenReady().then(createWindow);
@@ -112,14 +115,14 @@ ipcMain.handle("create-a-file", async (event, content: any) => {
   return filePath;
 });
 
-ipcMain.on("restart_app", () => {
-  autoUpdater.quitAndInstall();
-});
+// ipcMain.on("restart_app", () => {
+//   autoUpdater.quitAndInstall();
+// });
 
-//auto update
-autoUpdater.on("update-available", () => {
-  win!.webContents.send("update_available");
-});
-autoUpdater.on("update-downloaded", () => {
-  win!.webContents.send("update_downloaded");
-});
+// //auto update
+// autoUpdater.on("update-available", () => {
+//   win!.webContents.send("update_available");
+// });
+// autoUpdater.on("update-downloaded", () => {
+//   win!.webContents.send("update_downloaded");
+// });
