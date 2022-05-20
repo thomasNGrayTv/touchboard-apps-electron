@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <h1>New Gray Polls Page v1.4.4</h1>
+  <h1>New Gray Polls Page v1.4.6</h1>
 </template>
 
 <style></style>

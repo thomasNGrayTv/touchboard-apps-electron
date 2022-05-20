@@ -19,7 +19,7 @@ const routes = [
   {
     path: "/whiteboard",
     name: "whiteboard",
-    component: () => import("../pages/WhiteBoard.vue"),
+    component: () => import("../pages/Whiteboard.vue"),
   },
 ];
 
