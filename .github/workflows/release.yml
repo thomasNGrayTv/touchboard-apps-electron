@@ -70,7 +70,7 @@ jobs:
       - name: Compile & Release Electron app
         uses: samuelmeuli/action-electron-builder@v1
         with:
-          build_script_name: build
+          build_script_name: prebuild
           args: --config electron-builder.json5
           github_token: ${{ secrets.GITHUB_TOKEN }}
           release: true
