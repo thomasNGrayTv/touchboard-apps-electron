@@ -22,6 +22,18 @@ npm run deploy
 ```
 Once the deploy finishes, you should be able to see a new draft in the releases section of this repo. Here you can finish publishing the release, and download the application if you'd like.
 
+## For local development testing
+
+```bash
+npm run dev
+```
+
+## For testing as a desktop app without publishing
+
+```bash
+npm run build
+```
+
 ## Core Dependencies
 
 - [Electron](https://www.electronjs.org/) - allows us to build cross-platform desktop apps with JavaScript, HTML, and CSS.
