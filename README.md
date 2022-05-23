@@ -15,7 +15,7 @@ Now allow your project to use the personal access token you obtained earlier. To
 
 You are now ready to deploy. After making updates to the project, just change the version number in the package.json file and save.
 
-**Note** Deployment can only be done on a windows machine at this time. Deploying on a Mac and trying to run the .exe for windows has caused some problems so far.
+**Note:** Deployment can only be done on a windows machine at this time. Deploying on a Mac and trying to run the .exe for windows has caused some problems so far.
 
 To deploy this project run the following commands at the project's root directory level:
 
@@ -24,7 +24,7 @@ npm install
 npm run prebuild
 npm run deploy
 ```
-Once the deploy finishes, you should be able to see a new draft in the releases section of this repo. Here you can finish publishing the release, and download the application if you'd like.
+Once the deploy finishes, you should be able to see a new draft in the releases section of this repo. Here you can finish publishing the release, and download the application if you'd like. After downloading the application, further releases will be auto-detected and auto-updated.
 
 ## For local development testing
 
