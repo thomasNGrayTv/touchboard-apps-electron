@@ -18,6 +18,7 @@ log.transports.console.format = "{h}:{i}:{s} {text}";
 
 autoUpdater.logger = log;
 
+
 // autoUpdater.logger.transports.file.resolvePath = () => path.join(APP_DATA, 'logs/main.log');
 
 // const server =
