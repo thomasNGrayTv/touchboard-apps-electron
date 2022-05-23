@@ -11,6 +11,14 @@ import { join } from "path";
 // require('update-electron-app')();
 
 import { autoUpdater } from "electron-updater";
+import log from "electron-log";
+
+log.transports.file.level = "info";
+log.transports.console.format = "{h}:{i}:{s} {text}";
+
+autoUpdater.logger = log;
+
+// autoUpdater.logger.transports.file.resolvePath = () => path.join(APP_DATA, 'logs/main.log');
 
 // const server =
 //   "https://github.com/thomasNGrayTv/touchboard-apps-electron/releases";
@@ -56,6 +64,8 @@ async function createWindow() {
 
   // Test active push message to Renderer-process
   win.webContents.on("did-finish-load", () => {
+    console.log("checked for updates");
+    autoUpdater.checkForUpdatesAndNotify();
     win?.webContents.send("main-process-message", new Date().toLocaleString());
   });
 
@@ -64,18 +74,14 @@ async function createWindow() {
     if (url.startsWith("https:")) shell.openExternal(url);
     return { action: "deny" };
   });
-
-  win.webContents.on("did-finish-load", () => {
-    autoUpdater.checkForUpdatesAndNotify();
-  });
 }
 
-app.on("ready", function () {
-  autoUpdater.checkForUpdatesAndNotify();
-  setInterval(() => {
-    autoUpdater.checkForUpdatesAndNotify();
-  }, 60000);
-});
+// app.on("ready", function () {
+//   autoUpdater.checkForUpdatesAndNotify();
+//   setInterval(() => {
+//     autoUpdater.checkForUpdatesAndNotify();
+//   }, 60000);
+// });
 
 app.whenReady().then(createWindow);
 
@@ -125,12 +131,12 @@ ipcMain.on("restart_app", () => {
 
 autoUpdater.on("update-available", () => {
   console.log("update available");
-  win!.webContents.send("update_available");
+  win?.webContents.send("update_available");
 });
 
 autoUpdater.on("update-downloaded", () => {
   console.log("update downloaded");
-  win!.webContents.send("update_downloaded");
+  win?.webContents.send("update_downloaded");
 });
 
 // autoUpdater.on("update-downloaded", (event, releaseNotes, releaseName) => {
