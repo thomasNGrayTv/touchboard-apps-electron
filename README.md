@@ -32,13 +32,11 @@ Once the deploy finishes, you should be able to see a new draft in the releases 
 - [Pinia](https://pinia.vuejs.org/) - Pinia is a store library for Vue, which allows you to share a state (data) across components/pages. 
 - [Vue-Router](https://router.vuejs.org/) - This is the official router for Vue.js. It allows you to dynamically render Vue components without reloading the page.
 
-##Releases
-
 
 ## Authors
 
 - [@thomasnixon](https://www.github.com/thomasNGrayTv)
 
 
-## View original boilerplate here
+## View original boilerplate here:
 https://github.com/electron-vite/electron-vite-vue
