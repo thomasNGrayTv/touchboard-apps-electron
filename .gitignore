@@ -4,8 +4,7 @@ dist
 dist-ssr
 *.local
 .debug.env
-electron-builder.json5
-electron-builder.yml
+
 
 tmp
 **/.tmp
