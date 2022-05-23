@@ -24,15 +24,15 @@ npm install
 npm run prebuild
 npm run deploy
 ```
-Once the deploy finishes, you should be able to see a new draft in the releases section of this repo. Here you can finish publishing the release, and download the application if you'd like. After downloading the application, further releases will be auto-detected and auto-updated.
+Once the deploy finishes, you should be able to see a new draft in the releases section of this repo (or in the new repo you created from this template). Here you can finish publishing the release, and download the application if you'd like. After downloading the application, further releases will be auto-detected and auto-updated.
 
-## For local development testing
+## For local development testing, run this script to see the app:
 
 ```bash
 npm run dev
 ```
 
-## For testing as a desktop app without publishing
+## For testing as a desktop app without publishing, run this script to see the app:
 
 ```bash
 npm run build
