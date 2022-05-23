@@ -20,7 +20,7 @@ npm install
 npm run prebuild
 npm run deploy
 ```
-Once the deploy finishes, you should be able to see a new draft in the releases section of this repo. Here you can finish publishing the release.
+Once the deploy finishes, you should be able to see a new draft in the releases section of this repo. Here you can finish publishing the release, and download the application if you'd like.
 
 ## Core Dependencies
 
@@ -31,6 +31,9 @@ Once the deploy finishes, you should be able to see a new draft in the releases 
 - [Interact.js](https://interactjs.io/) - JavaScript drag and drop, resizing, and multi-touch gestures for modern browsers.
 - [Pinia](https://pinia.vuejs.org/) - Pinia is a store library for Vue, it allows you to share a state (data) across components/pages. 
 - [Vue-Router](https://router.vuejs.org/) - This is the official router for Vue.js. It allows you to dynamically render Vue components without reloading the page.
+
+##Releases
+
 
 ## Authors
 
