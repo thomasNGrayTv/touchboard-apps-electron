@@ -1,0 +1,11 @@
+button.navItem {
+  cursor: pointer;
+  margin: 0.71em;
+}
+
+.navItem img {
+  z-index: 9999999;
+  width: 2em;
+  height: 2em;
+  display: flex;
+}

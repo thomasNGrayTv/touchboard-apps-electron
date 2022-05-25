@@ -47,7 +47,7 @@ onMounted(() => {
   <div class="cards">
     <div class="zone">
       <h2>True</h2>
-      <div class="leftCustom1 widthCustom1 hCustom dropzone saveDropZone"></div>
+      <div class="hCustom dropzone saveDropZone"></div>
     </div>
     <div class="cardContainer dropzone">
       <Card
@@ -66,9 +66,7 @@ onMounted(() => {
     </div>
     <div class="zone">
       <h2>False</h2>
-      <div
-        class="leftCustom2 widthCustom2 hCustom dropzone trashDropZone"
-      ></div>
+      <div class="hCustom dropzone trashDropZone"></div>
     </div>
   </div>
 </template>

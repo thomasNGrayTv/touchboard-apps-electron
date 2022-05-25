@@ -7,15 +7,15 @@
   justify-content: space-around;
 }
 
-.cards .zone {
-  width: 30%;
-}
-
 .cardContainer {
   position: relative;
   width: 30%;
   height: 100%;
   min-height: 100em;
+}
+
+.cards .zone {
+  width: 30%;
 }
 
 .dropzone:not(.cardContainer) {
