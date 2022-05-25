@@ -42,7 +42,7 @@ npm run build
 
 - [Electron](https://www.electronjs.org/) - allows us to build cross-platform desktop apps with JavaScript, HTML, and CSS.
 - [Vue.js](https://vuejs.org/) - An approachable, performant and versatile framework for building web user interfaces.
-- [Vite](https://vitejs.dev/) - a great alternative to webpack, this module build tool was made by the creator of Vue.js and aims to provide a faster and leaner development experience for modern web projects.
+- [Vite](https://vitejs.dev/) - this module build tool was made by the creator of Vue.js and aims to provide a faster and leaner development experience for modern web projects. Video explanation by the creator of Vue here: https://www.vuemastery.com/courses/lightning-fast-builds-with-vite/intro-to-vite
 - [Axios](https://axios-http.com/docs/intro) - a promise based HTTP Client for node.js (makes API calls to get needed data).
 - [Interact.js](https://interactjs.io/) - JavaScript drag and drop, resizing, and multi-touch gestures for modern browsers.
 - [Pinia](https://pinia.vuejs.org/) - Pinia is a store library for Vue, which allows you to share a state (data) across components/pages. 
