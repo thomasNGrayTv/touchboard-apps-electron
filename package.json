@@ -47,7 +47,7 @@
     "axios": "^0.27.2",
     "electron-log": "^4.4.7",
     "electron-updater": "^5.0.1",
-    "esbuild": "^0.14.39",
+    "esbuild": "^0.14.42",
     "interactjs": "^1.10.11",
     "pinia": "^2.0.14",
     "update-electron-app": "^2.0.1",
