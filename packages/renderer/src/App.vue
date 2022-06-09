@@ -23,6 +23,8 @@ const DrawTool = defineAsyncComponent(() =>
 @import "./assets/css/drawStyles.css";
 @import "./assets/css/cardStyles.css";
 @import "./assets/css/whiteboardStyles.css";
+@import "./assets/css/formStyles.css";
+@import "./assets/css/screenShare.css";
 
 * {
   box-sizing: border-box;

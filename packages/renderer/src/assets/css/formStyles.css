@@ -1,0 +1,6 @@
+.errorMessage {
+  color: crimson;
+}
+.errorBorder {
+  border: 1px solid crimson;
+}

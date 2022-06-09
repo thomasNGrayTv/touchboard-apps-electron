@@ -11,13 +11,16 @@
     "deploy": "electron-builder --win --publish always",
     "init": "git config core.hooksPath .git/hooks/ && rm -rf .git/hooks && npx simple-git-hooks",
     "test:e2e": "npx playwright test",
-    "test:e2e:headless": "npx playwright test --headed"
+    "test:e2e:headless": "npx playwright test --headed",
+    "test-ct": "playwright test -c playwright-ct.config.ts"
   },
   "engines": {
     "node": ">=14.17.0"
   },
   "devDependencies": {
     "@playwright/test": "^1.21.1",
+    "@types/screenshot-desktop": "^1.12.0",
+    "@types/uuid": "^8.3.4",
     "@vitejs/plugin-vue": "^2.3.2",
     "@vue/devtools": "^6.0.0-beta.21",
     "autoprefixer": "^10.4.7",
@@ -29,6 +32,7 @@
     "vite": "^2.9.8",
     "vite-plugin-electron": "^0.4.3",
     "vite-plugin-resolve": "^2.0.8",
+    "vitest": "^0.14.1",
     "vue": "^3.2.33",
     "vue-tsc": "^0.34.15"
   },
@@ -50,8 +54,13 @@
     "esbuild": "^0.14.39",
     "interactjs": "^1.10.11",
     "pinia": "^2.0.14",
+    "screenshot-desktop": "^1.12.7",
+    "socket.io-client": "^4.5.1",
     "update-electron-app": "^2.0.1",
-    "vue-router": "^4.0.15"
+    "uuid": "^8.3.2",
+    "vee-validate": "^4.5.8",
+    "vue-router": "^4.0.15",
+    "yup": "^0.32.11"
   },
   "repository": {
     "type": "git",

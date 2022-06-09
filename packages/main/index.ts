@@ -1,9 +1,22 @@
-import { app, BrowserWindow, shell, ipcMain, dialog } from "electron";
+import {
+  app,
+  BrowserWindow,
+  shell,
+  ipcMain,
+  dialog,
+  desktopCapturer,
+} from "electron";
 import fs from "fs";
 import { release } from "os";
 import { join } from "path";
 import { autoUpdater } from "electron-updater";
 import log from "electron-log";
+
+import { v4 as uuidv4 } from "uuid";
+import screenshot from "screenshot-desktop";
+
+var socket = require("socket.io-client")("http://192.168.1.119:5000");
+var interval: NodeJS.Timer;
 
 log.transports.file.level = "info";
 log.transports.console.format = "{h}:{i}:{s} {text}";
@@ -26,7 +39,7 @@ let win: BrowserWindow | null = null;
 
 async function createWindow() {
   win = new BrowserWindow({
-    title: "True/False Page",
+    title: "Touchscreen Apps",
     width: 1680,
     height: 900,
     webPreferences: {
@@ -37,6 +50,7 @@ async function createWindow() {
   });
 
   if (app.isPackaged) {
+    win.removeMenu();
     win.loadFile(join(__dirname, "../renderer/index.html"));
   } else {
     // 🚧 Use ['ENV_NAME'] avoid vite:define plugin
@@ -109,4 +123,87 @@ ipcMain.on("restart_app", () => {
 autoUpdater.on("error", (message) => {
   console.error("There was a problem updating the application");
   console.error(message);
+});
+
+//start screen share
+ipcMain.on("start-share", (event, arg) => {
+  //generate random string id
+  var uuid = uuidv4();
+  //socket connects to our backend and calls 'join-message' method there
+  socket.emit("join-message", uuid);
+  //send uuid to the frontend
+  event.reply("uuid", uuid);
+
+  desktopCapturer
+    .getSources({
+      types: ["window", "screen"],
+      thumbnailSize: { width: 1920, height: 1080 },
+    })
+    .then(async (sources) => {
+      for (const source of sources) {
+        if (source.name === "Touchboard Apps") {
+          try {
+            const mediaDevices = navigator.mediaDevices as any;
+            const stream = await mediaDevices.getUserMedia({
+              audio: true,
+              video: {
+                mandatory: {
+                  chromeMediaSource: "desktop",
+                  chromeMediaSourceId: source.id,
+                  minWidth: 1280,
+                  maxWidth: 1280,
+                  minHeight: 720,
+                  maxHeight: 720,
+                },
+              },
+            });
+
+            var obj = {
+              room: uuid,
+              image: stream,
+            };
+
+            socket.emit("screen-data", JSON.stringify(obj));
+          } catch (e) {
+            console.log(e);
+          }
+        }
+      }
+    });
+
+  //take continuous screen shot
+  // interval = setInterval(() => {
+  //     // desktopCapturer
+  //     // .getSources({
+  //     //   types: ["window", "screen"],
+  //     //   thumbnailSize: { width: 1920, height: 1080 },
+  //     // })
+  //     // .then((sources) => {
+  //     //   let imgStr = sources[0].thumbnail.toDataURL();
+  //     //   var obj = {
+  //     //     room: uuid,
+  //     //     image: imgStr,
+  //     //   };
+
+  //     //   socket.emit("screen-data", JSON.stringify(obj));
+  //     // });
+
+  //   // screenshot().then((img) => {
+  //   //   //broadcast to all other users
+  //   //   var imgStr = Buffer.from(img).toString("base64");
+
+  //   //   var obj = {
+  //   //     room: uuid,
+  //   //     image: imgStr,
+  //   //   };
+
+  //   //   socket.emit("screen-data", JSON.stringify(obj));
+  //   // });
+  // }, 100);
+});
+
+//stop screen share
+ipcMain.on("stop-share", (event, arg) => {
+  //stop broadcasting & screenshot capturing
+  clearInterval(interval);
 });

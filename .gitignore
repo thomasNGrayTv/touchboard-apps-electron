@@ -9,3 +9,6 @@ dist-ssr
 tmp
 **/.tmp
 release
+/test-results/
+/playwright-report/
+/playwright/.cache/

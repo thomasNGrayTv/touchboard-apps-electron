@@ -66,6 +66,7 @@ function toggleFullScreen() {
 
 <template>
   <header>
+    <!-- <h2 class="navTitle">Nav Bar</h2> -->
     <div class="globalTools">
       <button
         class="navItem"
