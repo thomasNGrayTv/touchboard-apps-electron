@@ -4,6 +4,21 @@ import { onMounted } from "vue";
 
 onMounted(() => {
   var canvas = new fabric.Canvas("canvas-fabric");
+  let box = document.querySelector(".whiteboard");
+  let width = box.offsetWidth;
+  let height = box.offsetHeight;
+
+  canvas.setWidth(width);
+  canvas.setHeight(height);
+
+  window.addEventListener("resize", function (event) {
+    let box = document.querySelector(".whiteboard");
+    let width = box.offsetWidth;
+    let height = box.offsetHeight;
+
+    canvas.setWidth(width);
+    canvas.setHeight(height);
+  });
 
   fabric.Image.fromURL(
     "https://www.positivethinking.tech/wp-content/uploads/2021/01/Logo-Vuejs.png",
@@ -95,12 +110,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <canvas
-    id="canvas-fabric"
-    width="600"
-    height="400"
-    style="border: 1px solid #ccc"
-  ></canvas>
+  <div class="whiteboard">
+    <canvas id="canvas-fabric" style="border: 1px solid #ccc"></canvas>
+  </div>
   <!-- <div class="whiteboardPageContainer">
     <div id="rotate-area">
       <div id="angle-info">0&deg;</div>
