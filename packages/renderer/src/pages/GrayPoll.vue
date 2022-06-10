@@ -1,6 +1,6 @@
 <script setup>
 import { ipcRenderer } from "electron";
-import { onMounted, ref } from "vue";
+import { onMounted, onUnmounted, ref } from "vue";
 
 const startShareShow = ref(true);
 const stopShareShow = ref(false);
@@ -25,6 +25,10 @@ onMounted(() => {
     //make sure to share this value with others so they can join
     roomId.value = data;
   });
+});
+
+onUnmounted(() => {
+  stopShare();
 });
 </script>
 

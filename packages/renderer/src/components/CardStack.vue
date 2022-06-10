@@ -3,6 +3,7 @@ import Card from "./Card.vue";
 import { onMounted } from "vue";
 import useAxiosHandler from "../composables/useAxiosHandler";
 import { factStore } from "../stores/factStore";
+import cardsBackup from "../backups/quotes.json";
 
 const store = factStore();
 
@@ -25,11 +26,13 @@ function addNeededFields(getCardsQuotes) {
 
 try {
   const getCardsQuotes = await useAxiosHandler().get("/quotes");
-  const results = addNeededFields(getCardsQuotes.data.results);
+  let results = addNeededFields(getCardsQuotes.data.results);
 
   store.setCards(results);
 } catch (err) {
   console.log("Error from API: " + err);
+  console.log(cardsBackup.results);
+  store.setCards(cardsBackup.results);
 }
 
 onMounted(() => {

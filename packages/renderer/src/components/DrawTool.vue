@@ -63,7 +63,21 @@ onMounted(() => {
         this.setDummyPoint();
       });
 
+      this.c.addEventListener("touchstart", (e) => {
+        this.mouseDown = true;
+        this.mouseX = e.offsetX;
+        this.mouseY = e.offsetY;
+        this.setDummyPoint();
+      });
+
       this.c.addEventListener("mouseup", () => {
+        if (this.mouseDown) {
+          this.setDummyPoint();
+        }
+        this.mouseDown = false;
+      });
+
+      this.c.addEventListener("touchend", () => {
         if (this.mouseDown) {
           this.setDummyPoint();
         }
@@ -78,6 +92,30 @@ onMounted(() => {
       });
 
       this.c.addEventListener("mousemove", (e) => {
+        this.moveMouse(e);
+
+        if (this.mouseDown) {
+          this.mouseX = this.mouseX;
+          this.mouseY = this.mouseY;
+
+          this.mouseX = e.offsetX;
+
+          this.mouseY = e.offsetY;
+
+          var item = {
+            isDummy: false,
+            x: this.mouseX,
+            y: this.mouseY,
+            c: color.value,
+            r: size.value,
+          };
+
+          history.value.push(item);
+          this.draw(item, history.value.length);
+        }
+      });
+
+      this.c.addEventListener("touchmove", (e) => {
         this.moveMouse(e);
 
         if (this.mouseDown) {

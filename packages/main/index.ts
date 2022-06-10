@@ -134,72 +134,92 @@ ipcMain.on("start-share", (event, arg) => {
   //send uuid to the frontend
   event.reply("uuid", uuid);
 
-  desktopCapturer
-    .getSources({
-      types: ["window", "screen"],
-      thumbnailSize: { width: 1920, height: 1080 },
-    })
-    .then(async (sources) => {
-      for (const source of sources) {
-        if (source.name === "Touchboard Apps") {
-          try {
-            const mediaDevices = navigator.mediaDevices as any;
-            const stream = await mediaDevices.getUserMedia({
-              audio: true,
-              video: {
-                mandatory: {
-                  chromeMediaSource: "desktop",
-                  chromeMediaSourceId: source.id,
-                  minWidth: 1280,
-                  maxWidth: 1280,
-                  minHeight: 720,
-                  maxHeight: 720,
-                },
-              },
-            });
+  // desktopCapturer
+  //   .getSources({
+  //     types: ["window", "screen"],
+  //     thumbnailSize: { width: 1920, height: 1080 },
+  //   })
+  //   .then(async (sources) => {
+  //     for (const source of sources) {
+  //       if (source.name === "Touchboard Apps") {
+  //         try {
+  //           const mediaDevices = navigator.mediaDevices as any;
+  //           const stream = await mediaDevices.getUserMedia({
+  //             audio: true,
+  //             video: {
+  //               mandatory: {
+  //                 chromeMediaSource: "desktop",
+  //                 chromeMediaSourceId: source.id,
+  //                 minWidth: 1280,
+  //                 maxWidth: 1280,
+  //                 minHeight: 720,
+  //                 maxHeight: 720,
+  //               },
+  //             },
+  //           });
 
-            var obj = {
-              room: uuid,
-              image: stream,
-            };
+  //           var obj = {
+  //             room: uuid,
+  //             image: stream,
+  //           };
 
-            socket.emit("screen-data", JSON.stringify(obj));
-          } catch (e) {
-            console.log(e);
-          }
-        }
-      }
-    });
+  //           socket.emit("screen-data", JSON.stringify(obj));
+  //         } catch (e) {
+  //           console.log(e);
+  //         }
+  //       }
+  //     }
+  //   });
 
   //take continuous screen shot
-  // interval = setInterval(() => {
-  //     // desktopCapturer
-  //     // .getSources({
-  //     //   types: ["window", "screen"],
-  //     //   thumbnailSize: { width: 1920, height: 1080 },
-  //     // })
-  //     // .then((sources) => {
-  //     //   let imgStr = sources[0].thumbnail.toDataURL();
-  //     //   var obj = {
-  //     //     room: uuid,
-  //     //     image: imgStr,
-  //     //   };
+  interval = setInterval(() => {
+    desktopCapturer
+      .getSources({
+        types: ["window", "screen"],
+        thumbnailSize: { width: 1920, height: 1080 },
+      })
+      .then(async (sources) => {
+        for (const source of sources) {
+          if (source.name === "Touchboard Apps") {
+          }
+        }
 
-  //     //   socket.emit("screen-data", JSON.stringify(obj));
-  //     // });
+        let imgStr = sources[0].thumbnail.toDataURL();
+        var obj = {
+          room: uuid,
+          image: imgStr,
+        };
 
-  //   // screenshot().then((img) => {
-  //   //   //broadcast to all other users
-  //   //   var imgStr = Buffer.from(img).toString("base64");
+        socket.emit("screen-data", JSON.stringify(obj));
+      });
 
-  //   //   var obj = {
-  //   //     room: uuid,
-  //   //     image: imgStr,
-  //   //   };
+    desktopCapturer
+      .getSources({
+        types: ["window", "screen"],
+        thumbnailSize: { width: 1920, height: 1080 },
+      })
+      .then((sources) => {
+        let imgStr = sources[0].thumbnail.toDataURL();
+        var obj = {
+          room: uuid,
+          image: imgStr,
+        };
 
-  //   //   socket.emit("screen-data", JSON.stringify(obj));
-  //   // });
-  // }, 100);
+        socket.emit("screen-data", JSON.stringify(obj));
+      });
+
+    // screenshot().then((img) => {
+    //   //broadcast to all other users
+    //   var imgStr = Buffer.from(img).toString("base64");
+
+    //   var obj = {
+    //     room: uuid,
+    //     image: imgStr,
+    //   };
+
+    //   socket.emit("screen-data", JSON.stringify(obj));
+    // });
+  }, 100);
 });
 
 //stop screen share
