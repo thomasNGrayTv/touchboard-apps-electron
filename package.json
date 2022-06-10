@@ -33,7 +33,7 @@
     "vite-plugin-electron": "^0.4.3",
     "vite-plugin-resolve": "^2.0.8",
     "vitest": "^0.14.1",
-    "vue": "^3.2.33",
+    "vue": "^3.2.37",
     "vue-tsc": "^0.34.15"
   },
   "env": {
