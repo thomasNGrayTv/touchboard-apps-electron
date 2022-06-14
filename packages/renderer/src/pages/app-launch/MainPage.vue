@@ -1,7 +1,7 @@
 <script setup>
 import { useField, useForm } from "vee-validate";
 import { object, string, number, boolean } from "yup";
-import BaseInput from "../components/BaseInput.vue";
+import BaseInput from "../../components/BaseInput.vue";
 
 const validationSchema = object({
   stationName: string().required("Station is required"),

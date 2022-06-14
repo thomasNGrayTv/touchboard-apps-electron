@@ -66,7 +66,6 @@ function toggleFullScreen() {
 
 <template>
   <header>
-    <!-- <h2 class="navTitle">Nav Bar</h2> -->
     <div class="globalTools">
       <button
         class="navItem"
@@ -86,15 +85,23 @@ function toggleFullScreen() {
       >
         <img src="../assets/expandIcon.png" alt="toggle full screen" />
       </button>
+      <button
+        @touchstart.prevent="router.push({ name: 'dashboard' })"
+        @click.prevent="router.push({ name: 'dashboard' })"
+        class="navItem"
+        title="dashboard"
+      >
+        <img src="../assets/homeIcon.png" alt="home icon" />
+      </button>
     </div>
     <div v-if="showNavMenu" class="navMenu">
       <button
-        @touchstart.prevent="router.push({ name: 'main-page' })"
-        @click.prevent="router.push({ name: 'main-page' })"
+        @touchstart.prevent="router.push({ name: 'test-app' })"
+        @click.prevent="router.push({ name: 'test-app' })"
         class="navItem"
-        title="home screen"
+        title="test app"
       >
-        <img src="../assets/homeIcon.png" alt="home icon" />
+        <img src="../assets/gpollIcon.png" alt="home icon" />
       </button>
 
       <button

@@ -1,20 +1,57 @@
 <script setup>
-import { defineAsyncComponent } from "vue";
-import NavBar from "./components/NavBar.vue";
-import { mainStore } from "./stores/mainStore";
+import { onMounted, computed, ref } from "vue";
+import themes from "./backups/themes.json";
+import { themeStore } from "./stores/themeStore";
 
-const store = mainStore();
+const primaryColor = ref("");
+const secondaryColor = ref("");
+const accentColor = ref("");
+const background = ref("");
+const backgroundType = ref("");
 
-const DrawTool = defineAsyncComponent(() =>
-  import("./components/DrawTool.vue")
-);
+const cssVars = computed(() => {
+  return {
+    "--primary-color": primaryColor,
+    "--secondary-color": secondaryColor,
+    "--accent-color": accentColor,
+  };
+});
+
+//api call brings in themes
+
+//or use backup
+const store = themeStore();
+store.importThemes(themes);
+store.changeTheme(themes[0]);
+
+console.log(store.themeSelected);
+
+primaryColor.value = store.themeSelected.primaryColor;
+secondaryColor.value = store.themeSelected.secondaryColor;
+accentColor.value = store.themeSelected.accentColor;
+background.value = store.themeSelected.background;
+backgroundType.value = store.themeSelected.backgroundType;
 </script>
 
 <template>
-  <NavBar></NavBar>
-  <div class="mainAppContainer">
+  <div class="rootContainer" :style="cssVars">
+    <video
+      v-if="backgroundType === 'video'"
+      id="background-video"
+      autoplay
+      loop
+      muted
+      :poster="background"
+    >
+      <source :src="background" type="video/mp4" />
+    </video>
+    <img
+      v-else
+      id="background-image"
+      :src="background"
+      alt="background image"
+    />
     <router-view></router-view>
-    <DrawTool v-if="store.showDraw"></DrawTool>
   </div>
 </template>
 
@@ -26,6 +63,12 @@ const DrawTool = defineAsyncComponent(() =>
 @import "./assets/css/formStyles.css";
 @import "./assets/css/screenShare.css";
 
+:root {
+  --primary-color: blue;
+  --secondary-color: red;
+  --accent-color: yellow;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -36,6 +79,20 @@ body {
 
 ::backdrop {
   background-color: transparent;
+}
+
+#background-video,
+#background-image {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0.95;
 }
 
 header {

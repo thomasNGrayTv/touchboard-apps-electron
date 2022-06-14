@@ -1,7 +1,7 @@
 <script setup>
-import { factStore } from "../stores/factStore";
+import { factStore } from "../../stores/factStore";
 import { ipcRenderer } from "electron";
-import CardStack from "../components/CardStack.vue";
+import CardStack from "../../components/CardStack.vue";
 
 const store = factStore();
 
