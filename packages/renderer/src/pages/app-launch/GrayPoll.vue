@@ -49,7 +49,7 @@ function barEnter(el, done) {
   if (parseInt(bar.dataset.barwidth) > textWidth) {
     percentLeft = bar.dataset.barwidth;
   } else {
-    percentLeft = parseFloat(textWidth) + 2;
+    percentLeft = parseFloat(textWidth) + 4;
   }
 
   gsap.to(bar, {

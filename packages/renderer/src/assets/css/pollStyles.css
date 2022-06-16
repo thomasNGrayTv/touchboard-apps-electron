@@ -163,7 +163,8 @@ input[type="radio"] + label > span {
 .list-enter-from,
 .list-leave-to {
   opacity: 0;
-  transform: translateX(30px);
+  width: 0;
+  transform: translateX(530px);
 }
 
 /* ensure leaving items are taken out of layout flow so that moving
