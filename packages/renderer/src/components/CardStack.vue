@@ -36,13 +36,12 @@ try {
 }
 
 onMounted(() => {
-  console.log("Initially " + (window.navigator.onLine ? "on" : "off") + "line");
-
-  document
-    .getElementById("statusCheck")
-    .addEventListener("click", () =>
-      alert("internet is " + (window.navigator.onLine ? "on" : "off") + "line")
-    );
+  // console.log("Initially " + (window.navigator.onLine ? "on" : "off") + "line");
+  // document
+  //   .getElementById("statusCheck")
+  //   .addEventListener("click", () =>
+  //     alert("internet is " + (window.navigator.onLine ? "on" : "off") + "line")
+  //   );
 });
 </script>
 
