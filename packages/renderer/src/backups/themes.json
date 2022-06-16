@@ -8,14 +8,14 @@
   },
   {
     "backgroundType": "video",
-    "background": "/src/assets/video-1.mp4",
+    "background": "https://designsupply-web.com/samplecontent/vender/codepen/20181014.mp4",
     "primaryColor": "blue",
     "secondaryColor": "red",
     "accent": "yellow"
   },
   {
     "backgroundType": "image",
-    "background": "/src/assets/background-1.png",
+    "background": "https://touchscreen.gray.tv/modules/grayTouchScreenSetup/uploads/KWCH/b_87_bg_image.jpg",
     "primaryColor": "brown",
     "secondaryColor": "red",
     "accent": "green"
