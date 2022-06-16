@@ -1,60 +1,45 @@
 <script setup>
-import { onMounted, computed, ref } from "vue";
 import themes from "./backups/themes.json";
+import { storeToRefs } from "pinia";
 import { themeStore } from "./stores/themeStore";
-
-const primaryColor = ref("");
-const secondaryColor = ref("");
-const accentColor = ref("");
-const background = ref("");
-const backgroundType = ref("");
-
-const cssVars = computed(() => {
-  return {
-    "--primary-color": primaryColor,
-    "--secondary-color": secondaryColor,
-    "--accent-color": accentColor,
-  };
-});
 
 //api call brings in themes
 
 //or use backup
 const store = themeStore();
+const { themeSelected } = storeToRefs(store);
+
 store.importThemes(themes);
 store.changeTheme(themes[0]);
-
-console.log(store.themeSelected);
-
-primaryColor.value = store.themeSelected.primaryColor;
-secondaryColor.value = store.themeSelected.secondaryColor;
-accentColor.value = store.themeSelected.accentColor;
-background.value = store.themeSelected.background;
-backgroundType.value = store.themeSelected.backgroundType;
 </script>
 
 <template>
-  <div class="rootContainer" :style="cssVars">
+  <component is="style">
+    :root { --primary-color: {{ themeSelected.primaryColor }};
+    --secondary-color: {{ themeSelected.secondaryColor }}; --accent-color:
+    {{ themeSelected.accent }}; }
+  </component>
+  <div class="rootContainer">
     <video
-      v-if="backgroundType === 'video'"
+      v-if="themeSelected.backgroundType === 'video'"
       id="background-video"
       autoplay
       loop
       muted
-      :poster="background"
+      :poster="themeSelected.background"
     >
-      <source :src="background" type="video/mp4" />
+      <source :src="themeSelected.background" type="video/mp4" />
     </video>
     <img
-      v-else-if="backgroundType === 'image'"
+      v-else-if="themeSelected.backgroundType === 'image'"
       id="background-image"
-      :src="background"
+      :src="themeSelected.background"
       alt="background image"
     />
     <div
       class="background"
       v-else
-      :style="{ backgroundColor: background }"
+      :style="{ backgroundColor: themeSelected.background }"
     ></div>
     <router-view></router-view>
   </div>
@@ -69,12 +54,6 @@ backgroundType.value = store.themeSelected.backgroundType;
 @import "./assets/css/screenShare.css";
 @import "./assets/css/pollStyles.css";
 
-:root {
-  --primary-color: blue;
-  --secondary-color: red;
-  --accent-color: yellow;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -85,6 +64,15 @@ body {
 
 ::backdrop {
   background-color: transparent;
+}
+
+.rootContainer {
+  color: var(--primary-color);
+}
+
+.rootContainer a,
+.rootContainer button {
+  color: var(--accent-color);
 }
 
 .background {

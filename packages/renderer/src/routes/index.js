@@ -23,16 +23,11 @@ const routes = [
     name: "app-launch",
     component: () => import("../parent/AppLaunch.vue"),
     redirect: {
-      name: "test-app",
+      name: "fact-finder",
     },
     children: [
       {
         path: "",
-        name: "test-app",
-        component: () => import("../pages/app-launch/MainPage.vue"),
-      },
-      {
-        path: "/app-launch/fact-finder",
         name: "fact-finder",
         component: () => import("../pages/app-launch/FactFinder.vue"),
       },

@@ -2,21 +2,21 @@
   {
     "backgroundType": "color",
     "background": "white",
-    "primaryColor": "blue",
+    "primaryColor": "black",
     "secondaryColor": "red",
-    "accent": "green"
+    "accent": "black"
   },
   {
     "backgroundType": "video",
     "background": "/src/assets/video-1.mp4",
     "primaryColor": "blue",
     "secondaryColor": "red",
-    "accent": "green"
+    "accent": "yellow"
   },
   {
     "backgroundType": "image",
     "background": "/src/assets/background-1.png",
-    "primaryColor": "blue",
+    "primaryColor": "brown",
     "secondaryColor": "red",
     "accent": "green"
   }

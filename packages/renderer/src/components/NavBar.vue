@@ -96,15 +96,6 @@ function toggleFullScreen() {
     </div>
     <div v-if="showNavMenu" class="navMenu">
       <button
-        @touchstart.prevent="router.push({ name: 'test-app' })"
-        @click.prevent="router.push({ name: 'test-app' })"
-        class="navItem"
-        title="test app"
-      >
-        <img src="../assets/gpollIcon.png" alt="home icon" />
-      </button>
-
-      <button
         @touchstart.prevent="router.push({ name: 'fact-finder' })"
         @click.prevent="router.push({ name: 'fact-finder' })"
         class="navItem"

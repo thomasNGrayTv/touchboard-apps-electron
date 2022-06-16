@@ -43,9 +43,6 @@ export const factStore = defineStore({
           c.index !== index && c.showCard == true && !c.inTrue && !c.inFalse
       );
 
-      console.log("drag index: " + index);
-      console.log("Found: " + indexFound);
-
       if (indexFound !== undefined && indexFound !== index && indexFound >= 0) {
         this.cards[indexFound].showCard = false;
       }

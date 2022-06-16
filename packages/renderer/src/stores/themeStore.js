@@ -11,6 +11,7 @@ export const themeStore = defineStore({
   getters: {},
   actions: {
     changeTheme(theme) {
+      console.log(theme);
       this.themeSelected = theme;
     },
     importThemes(themes) {
