@@ -46,11 +46,16 @@ backgroundType.value = store.themeSelected.backgroundType;
       <source :src="background" type="video/mp4" />
     </video>
     <img
-      v-else
+      v-else-if="backgroundType === 'image'"
       id="background-image"
       :src="background"
       alt="background image"
     />
+    <div
+      class="background"
+      v-else
+      :style="{ backgroundColor: background }"
+    ></div>
     <router-view></router-view>
   </div>
 </template>
@@ -62,6 +67,7 @@ backgroundType.value = store.themeSelected.backgroundType;
 @import "./assets/css/whiteboardStyles.css";
 @import "./assets/css/formStyles.css";
 @import "./assets/css/screenShare.css";
+@import "./assets/css/pollStyles.css";
 
 :root {
   --primary-color: blue;
@@ -79,6 +85,17 @@ body {
 
 ::backdrop {
   background-color: transparent;
+}
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
 }
 
 #background-video,

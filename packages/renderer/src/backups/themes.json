@@ -1,5 +1,12 @@
 [
   {
+    "backgroundType": "color",
+    "background": "white",
+    "primaryColor": "blue",
+    "secondaryColor": "red",
+    "accent": "green"
+  },
+  {
     "backgroundType": "video",
     "background": "/src/assets/video-1.mp4",
     "primaryColor": "blue",
