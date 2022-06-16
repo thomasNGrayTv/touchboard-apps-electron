@@ -145,7 +145,7 @@ onMounted(() => {
           </div>
         </div>
         <div class="chartBars">
-          <transition-group appear v-if="!showBars">
+          <transition-group name="list" appear v-if="!showBars">
             <div
               class="barOuter"
               v-for="(bar, index) in pollData"
@@ -158,6 +158,7 @@ onMounted(() => {
             appear
             @before-enter="beforeBarEnter"
             @enter="barEnter"
+            name="list"
             v-else
           >
             <div
