@@ -3,3 +3,13 @@
   height: 100%;
   min-height: 100vh;
 }
+
+#rotate-area {
+  position: absolute;
+  top: 10em;
+}
+
+#gesture-area {
+  position: absolute;
+  top: 10em;
+}
