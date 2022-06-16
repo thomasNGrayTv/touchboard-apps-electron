@@ -34,10 +34,23 @@ function beforeBarEnter(el) {
 
 function barEnter(el, done) {
   const percentHolder = el.getElementsByClassName("barPercentHolder")[0];
+  let containerWidth = el.offsetWidth;
+  const text = el.getElementsByClassName("barLabel")[0];
+  let textWidth = text.offsetWidth;
+
+  textWidth = ((textWidth / containerWidth) * 100).toFixed(2);
+
   let bar = el.getElementsByClassName("bar")[0];
   let counter = {
     value: 0,
   };
+  let percentLeft;
+
+  if (parseInt(bar.dataset.barwidth) > textWidth) {
+    percentLeft = bar.dataset.barwidth;
+  } else {
+    percentLeft = parseFloat(textWidth) + 2;
+  }
 
   gsap.to(bar, {
     width: bar.dataset.barwidth + "%",
@@ -48,7 +61,7 @@ function barEnter(el, done) {
   });
 
   gsap.to(percentHolder, {
-    left: bar.dataset.barwidth + "%",
+    left: percentLeft + "%",
     ease: "power4.out",
     duration: 2,
     delay: bar.dataset.index * 0.3,
@@ -115,7 +128,7 @@ onMounted(() => {
                     class="mark"
                     style="
                       fill: none;
-                      stroke: #af3125;
+                      stroke: red;
                       stroke-width: 2.665;
                       stroke-opacity: 1;
                     "
