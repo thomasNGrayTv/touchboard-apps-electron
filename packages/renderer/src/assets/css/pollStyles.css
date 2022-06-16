@@ -1,4 +1,31 @@
+.pollsPage .banner {
+  height: 3em;
+  background-color: #0c306e;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.pollsPage .bannerTitle {
+  width: 29em;
+  height: 6em;
+  margin: -3em auto 2em auto;
+  background-color: #ca3628;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pollsPage .bannerTitle .bannerTitle-text {
+  color: white;
+  font-size: 3em;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
 .pollsPage .pollMainTitle {
+  font-size: 2em;
   font-weight: bolder;
   text-align: center;
   margin-top: 0.5em;
@@ -9,7 +36,7 @@
 .pollsPage .pollContent {
   display: flex;
   padding: 1em;
-  width: 50%;
+  width: 60em;
   margin: auto;
 }
 

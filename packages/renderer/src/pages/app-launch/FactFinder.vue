@@ -29,7 +29,7 @@ async function handleSave() {
 
 <template>
   <div id="factFinderContainer">
-    <button
+    <!-- <button
       v-if="store.cards.length"
       @touchstart.prevent="handleSave()"
       @click.prevent="handleSave()"
@@ -37,7 +37,7 @@ async function handleSave() {
     >
       Save to File
     </button>
-    <button id="statusCheck" class="btn-primary">Status Check</button>
+    <button id="statusCheck" class="btn-primary">Status Check</button> -->
 
     <Suspense>
       <template #default>

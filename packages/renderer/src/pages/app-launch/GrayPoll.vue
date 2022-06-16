@@ -106,7 +106,11 @@ onMounted(() => {
 
 <template>
   <div class="pollsPage">
-    <h1 class="pollMainTitle">Do you like spaghetti?</h1>
+    <div class="banner"></div>
+    <div class="bannerTitle">
+      <h1 class="bannerTitle-text">News Poll</h1>
+    </div>
+    <h2 class="pollMainTitle">Do you like spaghetti?</h2>
     <div class="pollContent">
       <div class="chartBackground">
         <div class="chartLabels">

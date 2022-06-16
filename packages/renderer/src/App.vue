@@ -113,7 +113,10 @@ body {
 }
 
 header {
-  background-color: darkgray;
+  position: absolute;
+  top: 1px;
+  z-index: 9999999;
+  /* background-color: darkgray; */
 }
 
 .mainPageContainer {
@@ -134,6 +137,6 @@ label {
 }
 
 .mainAppContainer {
-  position: relative;
+  /* position: relative; */
 }
 </style>
