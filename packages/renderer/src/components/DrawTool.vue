@@ -68,8 +68,11 @@ onMounted(() => {
 
       this.c.addEventListener("touchstart", (e) => {
         this.mouseDown = true;
-        this.mouseX = e.offsetX;
-        this.mouseY = e.offsetY;
+        var bcr = e.target.getBoundingClientRect();
+        var x = e.targetTouches[0].clientX - bcr.x;
+        var y = e.targetTouches[0].clientY - bcr.y;
+        this.mouseX = x;
+        this.mouseY = y;
         this.setDummyPoint();
       });
 
@@ -119,15 +122,18 @@ onMounted(() => {
       });
 
       this.c.addEventListener("touchmove", (e) => {
-        this.moveMouse(e);
+        this.moveTouch(e);
 
         if (this.mouseDown) {
           this.mouseX = this.mouseX;
           this.mouseY = this.mouseY;
+          var bcr = e.target.getBoundingClientRect();
+          var x = e.targetTouches[0].clientX - bcr.x;
+          var y = e.targetTouches[0].clientY - bcr.y;
 
-          this.mouseX = e.offsetX;
+          this.mouseX = x;
 
-          this.mouseY = e.offsetY;
+          this.mouseY = y;
 
           var item = {
             isDummy: false,
@@ -156,6 +162,16 @@ onMounted(() => {
     moveMouse(e) {
       let x = e.offsetX;
       let y = e.offsetY;
+
+      var cursor = document.getElementById("cursor");
+
+      cursor.style.transform = `translate(${x - 10}px, ${y - 10}px)`;
+    }
+
+    moveTouch(e) {
+      var bcr = e.target.getBoundingClientRect();
+      var x = e.targetTouches[0].clientX - bcr.x;
+      var y = e.targetTouches[0].clientY - bcr.y;
 
       var cursor = document.getElementById("cursor");
 
