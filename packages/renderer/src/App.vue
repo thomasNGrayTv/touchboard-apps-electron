@@ -125,6 +125,6 @@ label {
 }
 
 .mainAppContainer {
-  /* position: relative; */
+  overflow: hidden;
 }
 </style>
