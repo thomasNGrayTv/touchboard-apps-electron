@@ -48,11 +48,11 @@
   margin-bottom: 1em;
   display: flex;
   align-items: center;
-  border: 1px solid #0c306e;
+  border: 2px solid #0c306e;
 }
 
 .pollsPage .bar {
-  border: 1px solid #0c306e;
+  border: 2px solid #0c306e;
 }
 
 .pollsPage .showBar {
@@ -71,7 +71,7 @@
 
 .pollsPage .bar .barLabel,
 .pollsPage .barOuter span {
-  margin-left: 1em;
+  margin-left: 0.21em;
   white-space: nowrap;
   color: #0c306e;
   font-weight: bolder;

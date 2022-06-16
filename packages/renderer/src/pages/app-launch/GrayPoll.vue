@@ -56,7 +56,7 @@ function barEnter(el, done) {
     width: bar.dataset.barwidth + "%",
     ease: "power4.out",
     duration: 2,
-    delay: bar.dataset.index * 0.3,
+    // delay: bar.dataset.index * 0.3,
     onComplete: done,
   });
 
@@ -64,14 +64,14 @@ function barEnter(el, done) {
     left: percentLeft + "%",
     ease: "power4.out",
     duration: 2,
-    delay: bar.dataset.index * 0.3,
+    // delay: bar.dataset.index * 0.3,
     onComplete: done,
   });
 
   gsap.to(counter, {
     value: bar.dataset.barwidth,
     onUpdate: () => (percentHolder.innerText = Math.round(counter.value) + "%"),
-    delay: bar.dataset.index * 0.3,
+    // delay: bar.dataset.index * 0.3,
     duration: 2,
   });
 }
@@ -81,22 +81,22 @@ onMounted(() => {
     {
       title: "Yes",
       color: "red",
-      percent: 70,
+      percent: 15,
     },
     {
       title: "No",
       color: "red",
-      percent: 20,
+      percent: 2,
     },
     {
       title: "Meh",
       color: "red",
-      percent: 30,
+      percent: 13,
     },
     {
-      title: "Extra bar",
+      title: "That's a spicy meatball!",
       color: "red",
-      percent: 90,
+      percent: 70,
     },
   ];
 
