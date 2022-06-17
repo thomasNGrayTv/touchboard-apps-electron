@@ -1,4 +1,6 @@
 #factFinderContainer {
+  min-height: 20em;
+  width: 100%;
   top: 3em;
   position: relative;
 }

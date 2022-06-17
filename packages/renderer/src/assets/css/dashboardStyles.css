@@ -1,0 +1,9 @@
+.dashboardMain .dashboardTitle {
+  color: white;
+  width: 20em;
+  margin: auto;
+}
+
+.dashboardMain a {
+  margin: 1em;
+}

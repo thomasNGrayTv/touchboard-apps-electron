@@ -2,6 +2,9 @@
 import { useField, useForm } from "vee-validate";
 import { object, string, number, boolean } from "yup";
 import BaseInput from "./BaseInput.vue";
+import gsap from "gsap";
+
+const emit = defineEmits(["loginStation"]);
 
 const validationSchema = object({
   stationName: string().required("Station is required"),
@@ -17,34 +20,56 @@ const handleChange = (event, field) => {
 };
 const submit = handleSubmit((values) => {
   console.log("Form Values: ", values);
+  emit("loginStation");
 });
+
+function beforeEnter(el) {
+  el.style.transform = "scale(0)";
+}
+
+function enter(el, done) {
+  gsap.to(el, {
+    scale: 1,
+    ease: "elastic.out(1, 0.7)",
+    duration: 0.7,
+    onComplete: done,
+  });
+}
 </script>
 
 <template>
-  <div class="mainPageContainer">
-    <h2>Station Login:</h2>
-    <form @submit.prevent="submit()">
-      <p>
-        <BaseInput
-          :modelValue="stationName"
-          @change="handleChange($event, 'stationName')"
-          :error="errors.stationName"
-          label="Station Name"
-          type="text"
-        ></BaseInput>
-      </p>
-      <p>
-        <BaseInput
-          :modelValue="apiKey"
-          @change="handleChange($event, 'apiKey')"
-          :error="errors.apiKey"
-          label="API Key"
-          type="password"
-        ></BaseInput>
-      </p>
-      <button type="submit">Submit</button>
-    </form>
-  </div>
+  <transition appear @beforeEnter="beforeEnter" @enter="enter">
+    <div class="loginContainer">
+      <div class="loginTitle">
+        <h2>Choose Station</h2>
+      </div>
+      <form @submit.prevent="submit()">
+        <p>
+          <BaseInput
+            :modelValue="stationName"
+            @change="handleChange($event, 'stationName')"
+            @input="
+              errors.stationName ? handleChange($event, 'stationName') : null
+            "
+            :error="errors.stationName"
+            label="Station"
+            type="text"
+          ></BaseInput>
+        </p>
+        <p>
+          <BaseInput
+            :modelValue="apiKey"
+            @change="handleChange($event, 'apiKey')"
+            @input="errors.apiKey ? handleChange($event, 'apiKey') : null"
+            :error="errors.apiKey"
+            label="API Key"
+            type="password"
+          ></BaseInput>
+        </p>
+        <button type="submit">Authenticate</button>
+      </form>
+    </div>
+  </transition>
 </template>
 
 <style></style>

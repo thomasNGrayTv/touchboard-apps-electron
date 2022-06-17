@@ -53,6 +53,7 @@
     "electron-updater": "^5.0.1",
     "esbuild": "^0.14.39",
     "gsap": "^3.10.4",
+    "hammerjs": "^2.0.8",
     "interactjs": "^1.10.11",
     "pinia": "^2.0.14",
     "screenshot-desktop": "^1.12.7",

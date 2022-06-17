@@ -1,51 +1,18 @@
-<script setup>
-import themes from "./backups/themes.json";
-import { storeToRefs } from "pinia";
-import { themeStore } from "./stores/themeStore";
-
-//api call brings in themes
-
-//or use backup
-const store = themeStore();
-const { themeSelected } = storeToRefs(store);
-
-store.importThemes(themes);
-store.changeTheme(themes[0]);
-</script>
+<script setup></script>
 
 <template>
-  <component is="style">
-    :root { --primary-color: {{ themeSelected.primaryColor }};
-    --secondary-color: {{ themeSelected.secondaryColor }}; --accent-color:
-    {{ themeSelected.accent }}; }
-  </component>
   <div class="rootContainer">
-    <video
-      v-if="themeSelected.backgroundType === 'video'"
-      id="background-video"
-      autoplay
-      loop
-      muted
-      :poster="themeSelected.background"
-    >
-      <source :src="themeSelected.background" type="video/mp4" />
-    </video>
     <img
-      v-else-if="themeSelected.backgroundType === 'image'"
       id="background-image"
-      :src="themeSelected.background"
+      src="https://touchscreen.gray.tv/modules/grayTouchScreenSetup/uploads/KWCH/b_87_bg_image.jpg"
       alt="background image"
     />
-    <div
-      class="background"
-      v-else
-      :style="{ backgroundColor: themeSelected.background }"
-    ></div>
     <router-view></router-view>
   </div>
 </template>
 
 <style>
+@import "./assets/css/dashboardStyles.css";
 @import "./assets/css/navStyles.css";
 @import "./assets/css/drawStyles.css";
 @import "./assets/css/cardStyles.css";
@@ -53,6 +20,7 @@ store.changeTheme(themes[0]);
 @import "./assets/css/formStyles.css";
 @import "./assets/css/screenShare.css";
 @import "./assets/css/pollStyles.css";
+@import "./assets/css/loginStyles.css";
 
 * {
   box-sizing: border-box;

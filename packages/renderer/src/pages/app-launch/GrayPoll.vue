@@ -2,6 +2,16 @@
 import { onMounted, ref, computed } from "vue";
 import gsap from "gsap";
 import { pollStore } from "../../stores/pollStore";
+import themes from "../../backups/themes.json";
+import { storeToRefs } from "pinia";
+import { themeStore } from "../../stores/themeStore";
+
+const themesStore = themeStore();
+const { themeSelected } = storeToRefs(themesStore);
+
+themesStore.importThemes(themes);
+//hard coded for now, but this would be a prop passed in from pre-launch
+themesStore.changeTheme(themes[0]);
 
 const graphBar = ref(null);
 const showBars = ref(false);
@@ -105,6 +115,15 @@ onMounted(() => {
 </script>
 
 <template>
+  <component is="style">
+    .pollsPage { --primary-color: {{ themeSelected.primaryColor }};
+    --secondary-color: {{ themeSelected.secondaryColor }}; --accent-color:
+    {{ themeSelected.accent }}; }
+  </component>
+  <div
+    class="background"
+    :style="{ backgroundColor: themeSelected.background }"
+  ></div>
   <div class="pollsPage">
     <div class="banner"></div>
     <div class="bannerTitle">

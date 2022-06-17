@@ -1,11 +1,11 @@
 <script setup>
 import Card from "./Card.vue";
-import { onMounted } from "vue";
 import useAxiosHandler from "../composables/useAxiosHandler";
 import { factStore } from "../stores/factStore";
 import cardsBackup from "../backups/quotes.json";
 
 const store = factStore();
+let results;
 
 function addNeededFields(getCardsQuotes) {
   let stringifyData = JSON.stringify(getCardsQuotes);
@@ -26,23 +26,13 @@ function addNeededFields(getCardsQuotes) {
 
 try {
   const getCardsQuotes = await useAxiosHandler().get("/quotes");
-  let results = addNeededFields(getCardsQuotes.data.results);
-
+  results = addNeededFields(getCardsQuotes.data.results);
   store.setCards(results);
 } catch (err) {
-  console.log("Error from API: " + err);
-  console.log(cardsBackup.results);
-  store.setCards(cardsBackup.results);
+  console.log(err);
+  results = addNeededFields(cardsBackup.results);
+  store.setCards(results);
 }
-
-onMounted(() => {
-  // console.log("Initially " + (window.navigator.onLine ? "on" : "off") + "line");
-  // document
-  //   .getElementById("statusCheck")
-  //   .addEventListener("click", () =>
-  //     alert("internet is " + (window.navigator.onLine ? "on" : "off") + "line")
-  //   );
-});
 </script>
 
 <template>

@@ -86,8 +86,8 @@ function toggleFullScreen() {
         <img src="../assets/expandIcon.png" alt="toggle full screen" />
       </button>
       <button
-        @touchstart.prevent="router.push({ name: 'dashboard' })"
-        @click.prevent="router.push({ name: 'dashboard' })"
+        @touchstart.prevent="router.push({ name: 'dashboard-main' })"
+        @click.prevent="router.push({ name: 'dashboard-main' })"
         class="navItem"
         title="dashboard"
       >

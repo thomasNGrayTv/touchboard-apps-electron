@@ -5,16 +5,19 @@ const routes = [
     path: "/",
     name: "dashboard",
     component: () => import("../parent/Dashboard.vue"),
+    redirect: {
+      name: "login",
+    },
     children: [
       {
-        path: "/dashboard/themes",
-        name: "themes",
-        component: () => import("../pages/dashboard/Themes.vue"),
+        path: "",
+        name: "login",
+        component: () => import("../pages/dashboard/LoginView.vue"),
       },
       {
-        path: "/dashboard/screen-share",
-        name: "screen-share",
-        component: () => import("../pages/dashboard/ScreenShare.vue"),
+        path: "/dashboard-main",
+        name: "dashboard-main",
+        component: () => import("../pages/dashboard/Main.vue"),
       },
     ],
   },

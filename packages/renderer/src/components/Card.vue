@@ -5,7 +5,7 @@ import { factStore } from "../stores/factStore";
 const store = factStore();
 let dynamicTargets = [];
 
-defineProps({
+const props = defineProps({
   card: {
     type: Object,
     required: true,
@@ -133,8 +133,8 @@ window.dragMoveListener = dragMoveListener;
 
 <template>
   <div class="card">
-    <h3 class="cardTitle">"{{ card.content }}"</h3>
-    <p>- {{ card.author }}</p>
+    <h3 class="cardTitle">"{{ props.card.content }}"</h3>
+    <p>- {{ props.card.author }}</p>
   </div>
 </template>
 

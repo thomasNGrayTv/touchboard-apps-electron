@@ -1,0 +1,40 @@
+.loginView .titleContainer {
+  color: white;
+  width: 60em;
+  margin: 2em auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginView .titleContainer img {
+  width: 13em;
+  height: 7em;
+  margin-right: 2em;
+}
+
+.loginView .loginContainer {
+  width: 30em;
+  margin: auto;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.loginView .loginContainer .loginTitle {
+  background-color: red;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3em;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.loginView .loginContainer form {
+  background-color: #ededed;
+  padding: 1em;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
