@@ -6,7 +6,9 @@ import { mainStore } from "../../stores/mainStore";
 import { ref } from "vue";
 
 const store = mainStore();
-const showCategories = ref(false);
+const showCategoryDropDown = ref(false);
+const showSupportDropDown = ref(false);
+const supports = ref(["Training", "Share Screen", "Video History"]);
 
 //hard coded api call result
 const apps = [
@@ -100,6 +102,66 @@ const apps = [
       preview: "/src/assets/map.png",
     },
   },
+  {
+    name: "Fact Finder",
+    link: "fact-finder",
+    favorite: false,
+    categories: ["All Apps", "Interactive"],
+    image: {
+      favorite: "/src/assets/flag.png",
+      preview: "/src/assets/map.png",
+    },
+  },
+  {
+    name: "gPoll",
+    link: "g-poll",
+    favorite: false,
+    categories: ["All Apps", "Gsync"],
+    image: {
+      favorite: "/src/assets/flag.png",
+      preview: "/src/assets/map.png",
+    },
+  },
+  {
+    name: "Whiteboard",
+    link: "whiteboard",
+    favorite: false,
+    categories: ["All Apps", "Interactive"],
+    image: {
+      favorite: "/src/assets/flag.png",
+      preview: "/src/assets/map.png",
+    },
+  },
+  {
+    name: "Fact Finder",
+    link: "fact-finder",
+    favorite: false,
+    categories: ["All Apps", "Interactive"],
+    image: {
+      favorite: "/src/assets/flag.png",
+      preview: "/src/assets/map.png",
+    },
+  },
+  {
+    name: "gPoll",
+    link: "g-poll",
+    favorite: false,
+    categories: ["All Apps", "Gsync"],
+    image: {
+      favorite: "/src/assets/flag.png",
+      preview: "/src/assets/map.png",
+    },
+  },
+  {
+    name: "Whiteboard",
+    link: "whiteboard",
+    favorite: false,
+    categories: ["All Apps", "Interactive"],
+    image: {
+      favorite: "/src/assets/flag.png",
+      preview: "/src/assets/map.png",
+    },
+  },
 ];
 if (store.apps.length <= 0) {
   store.setApps(apps);
@@ -108,15 +170,20 @@ console.log(store.categories);
 </script>
 
 <template>
+  <img
+    id="background-image"
+    src="https://touchscreen.gray.tv/modules/grayTouchScreenSetup/uploads/KWCH/b_87_bg_image.jpg"
+    alt="background image"
+  />
   <div class="dashboardMain">
     <div class="sidebar">
       <station-logo></station-logo>
 
       <div class="controlsContainer">
         <button
-          @click="showCategories = !showCategories"
-          class="controlsContainer_item categories"
-          :class="{ showCategories: showCategories }"
+          @click="showCategoryDropDown = !showCategoryDropDown"
+          class="btn categories"
+          :class="{ showDropDown: showCategoryDropDown }"
         >
           <span>Categories</span>
           <svg
@@ -139,38 +206,67 @@ console.log(store.categories);
             />
           </svg>
           <transition name="fadeFromAbove" mode="out-in">
-            <ul class="categoriesList" v-if="showCategories">
+            <ul class="btnList" v-if="showCategoryDropDown">
               <li v-for="(category, index) in store.categories" :key="index">
-                <button class="controlsContainer_item">
-                  {{ category }} - 5
-                </button>
+                <button class="btn">{{ category }} - 5</button>
               </li>
             </ul>
           </transition>
         </button>
-        <button class="controlsContainer_item">
-          <span>Events</span>
+        <button class="btn">
+          <span>Touchboard News</span>
         </button>
-        <button class="controlsContainer_item">
-          <span>Calendar</span>
-        </button>
-        <button class="controlsContainer_item">
-          <span>Share Screen</span>
-        </button>
-        <button class="controlsContainer_item">
+        <button class="btn">
           <span>Change Theme</span>
         </button>
-        <button class="controlsContainer_item">
-          <span>My Video History</span>
-        </button>
-        <button class="controlsContainer_item">
+        <button class="btn">
           <span>FAQ's</span>
         </button>
       </div>
     </div>
     <div class="vertical-divider"></div>
     <div class="mainContent">
-      <h1 class="dashboardTitle">GDM Touchscreen Dashboard</h1>
+      <div class="headerSection">
+        <h1 class="dashboardTitle">GDM Touchscreen Dashboard</h1>
+        <button
+          @click="showSupportDropDown = !showSupportDropDown"
+          class="btn support"
+          :class="{ showDropDown: showSupportDropDown }"
+        >
+          <img
+            class="supportIcon"
+            src="../../assets/gears.png"
+            alt="support icon"
+          />
+          <span>Support</span>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 13.229166 13.229166"
+            version="1.1"
+            id="svg5"
+          >
+            <path
+              style="
+                fill: currentColor;
+                stroke: none;
+                stroke-width: 1.66639;
+                stroke-dasharray: none;
+                stroke-opacity: 1;
+              "
+              d="m 1.124479,4.630208 h 10.980209 l -2.7014793,3.042708 -2.70148,3.042708 z"
+              id="path5454"
+            />
+          </svg>
+          <transition name="fadeFromAbove" mode="out-in">
+            <ul class="btnList" v-if="showSupportDropDown">
+              <li v-for="(support, index) in supports" :key="index">
+                <button class="btn">{{ support }}</button>
+              </li>
+            </ul>
+          </transition>
+        </button>
+      </div>
       <div class="favoritesContainer">
         <h3>FAVORITES</h3>
         <div class="favoritesContainer_items">

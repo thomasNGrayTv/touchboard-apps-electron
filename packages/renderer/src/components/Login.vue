@@ -40,11 +40,8 @@ function enter(el, done) {
 <template>
   <transition appear @beforeEnter="beforeEnter" @enter="enter">
     <div class="loginContainer">
-      <div class="loginTitle">
-        <h2>Choose Station</h2>
-      </div>
       <form @submit.prevent="submit()">
-        <p>
+        <p class="flexIt">
           <BaseInput
             :modelValue="stationName"
             @change="handleChange($event, 'stationName')"
@@ -52,11 +49,11 @@ function enter(el, done) {
               errors.stationName ? handleChange($event, 'stationName') : null
             "
             :error="errors.stationName"
-            label="Station"
+            label="Call Letters"
             type="text"
           ></BaseInput>
         </p>
-        <p>
+        <p class="flexIt">
           <BaseInput
             :modelValue="apiKey"
             @change="handleChange($event, 'apiKey')"
@@ -66,7 +63,7 @@ function enter(el, done) {
             type="password"
           ></BaseInput>
         </p>
-        <button type="submit">Authenticate</button>
+        <button class="submitBtn" type="submit">Authenticate</button>
       </form>
     </div>
   </transition>

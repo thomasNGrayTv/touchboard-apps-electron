@@ -2,11 +2,6 @@
 
 <template>
   <div class="rootContainer">
-    <img
-      id="background-image"
-      src="https://touchscreen.gray.tv/modules/grayTouchScreenSetup/uploads/KWCH/b_87_bg_image.jpg"
-      alt="background image"
-    />
     <router-view></router-view>
   </div>
 </template>
@@ -22,12 +17,24 @@
 @import "./assets/css/pollStyles.css";
 @import "./assets/css/loginStyles.css";
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap");
+
 * {
   box-sizing: border-box;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
 }
 
 body {
   margin: 0;
+  color: #062f6e;
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
 }
 
 ::backdrop {
@@ -41,6 +48,17 @@ body {
 .rootContainer a,
 .rootContainer button {
   color: var(--accent-color);
+}
+
+.rootContainer button,
+.rootContainer a {
+  transition: all 0.43s ease;
+  cursor: pointer;
+}
+
+.rootContainer button:active:not(.categories),
+.rootContainer a:active {
+  transform: scale(0.98);
 }
 
 .background {

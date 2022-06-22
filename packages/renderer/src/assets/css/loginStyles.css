@@ -1,24 +1,67 @@
-.loginView .titleContainer {
+.loginView {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+
+.loginView .logoContainer {
   color: white;
-  width: 60em;
-  margin: 2em auto;
+  width: 26%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.loginView .titleContainer img {
-  width: 13em;
-  height: 7em;
-  margin-right: 2em;
+.loginView .titleFormContainer {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.loginView .logoContainer img {
+  width: 74%;
+  height: 14em;
+  margin-right: 4em;
 }
 
 .loginView .loginContainer {
-  width: 30em;
-  margin: auto;
-  padding: 2em;
+  width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.loginView .loginContainer form .flexIt {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: start;
+  align-items: baseline;
+  position: relative;
+}
+
+.loginView .loginContainer form .flexIt input {
+  margin-right: 1em;
+  margin-bottom: 1em;
+  height: 2em;
+}
+
+.loginView .loginContainer form .submitBtn {
+  width: 10em;
+  height: 2.5em;
+  background-color: rgb(248, 244, 244);
+  border: 1px solid #062f6e;
+  border-radius: 4px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.loginView .loginContainer form .flexIt .errorMessage {
+  margin-right: 1em;
+  position: absolute;
+  top: 1.2em;
+  font-size: 0.8em;
+  font-weight: 200;
 }
 
 .loginView .loginContainer .loginTitle {
@@ -30,11 +73,4 @@
   height: 3em;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-}
-
-.loginView .loginContainer form {
-  background-color: #ededed;
-  padding: 1em;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
 }
