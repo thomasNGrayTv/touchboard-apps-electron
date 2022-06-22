@@ -2,6 +2,17 @@
   display: flex;
 }
 
+.dashboardMain button,
+.dashboardMain a {
+  transition: all 0.43s ease;
+  cursor: pointer;
+}
+
+.dashboardMain button:active,
+.dashboardMain a:active {
+  transform: scale(0.98);
+}
+
 .dashboardMain .sidebar {
   width: 18%;
   display: flex;
@@ -165,11 +176,6 @@
   border-radius: 5px;
   overflow: hidden;
   text-decoration: none;
-  transition: all 0.43s ease;
-}
-
-.dashboardMain .mainContent .apps .app-item:active {
-  transform: scale(0.98);
 }
 
 .dashboardMain .mainContent .apps .app-item .app-item--text {
