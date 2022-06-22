@@ -1,7 +1,14 @@
 <script setup>
+import { mainStore } from "../../stores/mainStore";
+
+const store = mainStore();
 const props = defineProps({
   app: {
     type: Object,
+    required: true,
+  },
+  index: {
+    type: Number,
     required: true,
   },
 });
@@ -9,7 +16,7 @@ const props = defineProps({
 
 <template>
   <div class="app-item--text">
-    <button @click.prevent="props.app.favorite = !props.app.favorite">
+    <button @click.prevent="store.toggleFavorite(index)">
       <transition name="fadeZoom" mode="out-in">
         <svg
           v-if="!props.app.favorite"
@@ -48,7 +55,7 @@ const props = defineProps({
     </button>
     <span>{{ props.app.name }}</span>
   </div>
-  <img class="app-item--image" src="../../assets/map.png" alt="map app" />
+  <img class="app-item--image" :src="props.app.image.preview" alt="map app" />
 </template>
 
 <style></style>

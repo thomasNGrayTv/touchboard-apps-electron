@@ -1,7 +1,18 @@
-button.navItem {
+.globalTools,
+.navMenu {
+  display: flex;
+}
+
+.navItem {
   cursor: pointer;
   margin: 0.71em;
   background: transparent;
+  border: 1px solid black;
+  width: 3.4em;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navItem img {

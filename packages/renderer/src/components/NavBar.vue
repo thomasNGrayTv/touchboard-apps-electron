@@ -1,5 +1,4 @@
 <script setup>
-import { router } from "../routes";
 import { ref } from "vue";
 import { mainStore } from "../stores/mainStore";
 
@@ -67,58 +66,46 @@ function toggleFullScreen() {
 <template>
   <header>
     <div class="globalTools">
-      <button
+      <a
         class="navItem"
         @touchstart.prevent="showNavMenu = !showNavMenu"
         @click.prevent="showNavMenu = !showNavMenu"
         title="toggle navigation"
       >
         <img src="../assets/nav_hamburger.png" alt="toggle navigation menu" />
-      </button>
-      <button class="navItem" @click="store.toggleDrawView()" title="draw tool">
+      </a>
+      <a class="navItem" @click="store.toggleDrawView()" title="draw tool">
         <img src="../assets/pencilIcon.png" alt="draw tool" />
-      </button>
-      <button
-        class="navItem"
-        @click="toggleFullScreen"
-        title="toggle fullscreen"
-      >
+      </a>
+      <a class="navItem" @click="toggleFullScreen" title="toggle fullscreen">
         <img src="../assets/expandIcon.png" alt="toggle full screen" />
-      </button>
-      <button
-        @touchstart.prevent="router.push({ name: 'dashboard-main' })"
-        @click.prevent="router.push({ name: 'dashboard-main' })"
+      </a>
+      <router-link
+        :to="{ name: 'dashboard-main' }"
         class="navItem"
         title="dashboard"
       >
         <img src="../assets/homeIcon.png" alt="home icon" />
-      </button>
+      </router-link>
     </div>
     <div v-if="showNavMenu" class="navMenu">
-      <button
-        @touchstart.prevent="router.push({ name: 'fact-finder' })"
-        @click.prevent="router.push({ name: 'fact-finder' })"
+      <router-link
+        :to="{ name: 'fact-finder' }"
         class="navItem"
         title="fact finder"
       >
         <img src="../assets/factFinderIcon.png" alt="fact finder icon" />
-      </button>
-      <button
-        @touchstart.prevent="router.push({ name: 'g-poll' })"
-        @click.prevent="router.push({ name: 'g-poll' })"
-        class="navItem"
-        title="gray polls"
-      >
+      </router-link>
+      <router-link :to="{ name: 'g-poll' }" class="navItem" title="gray polls">
         <img src="../assets/gpollIcon.png" alt="poll icon" />
-      </button>
-      <button
-        @touchstart.prevent="router.push({ name: 'whiteboard' })"
-        @click.prevent="router.push({ name: 'whiteboard' })"
+      </router-link>
+      <router-link
+        :to="{ name: 'whiteboard' }"
         class="navItem"
         title="whiteboard"
       >
         <img src="../assets/white_board.png" alt="whiteboard icon" />
-      </button>
+      </router-link>
     </div>
   </header>
 </template>

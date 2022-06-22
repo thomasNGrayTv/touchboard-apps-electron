@@ -8,7 +8,7 @@
   cursor: pointer;
 }
 
-.dashboardMain button:active,
+.dashboardMain button:active:not(.categories),
 .dashboardMain a:active {
   transform: scale(0.98);
 }
@@ -33,7 +33,7 @@
 
 .dashboardMain .vertical-divider {
   border-left: 1px solid gray;
-  height: 93vh;
+  height: 97vh;
   width: 2em;
   margin: 1em 1.5em;
 }
@@ -41,7 +41,7 @@
 .dashboardMain .horizontal-divider {
   border-bottom: 1px solid gray;
   width: 90%;
-  height: 2em;
+  height: 1em;
   margin: 1em 0em;
 }
 
@@ -64,7 +64,7 @@
 
 .dashboardMain .stationLogoContainer img {
   height: 8em;
-  width: 15em;
+  width: 14em;
   border: 1px solid white;
 }
 
@@ -74,16 +74,18 @@
   background-color: lightgray;
   width: 10em;
   text-align: center;
-  margin: -0.2em 0 0 0;
+  margin: -0.3em 0 0 0;
   padding: 0.2em 0.4em;
   font-size: 0.8em;
   white-space: nowrap;
   text-transform: uppercase;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
+  z-index: 3;
 }
 
 .dashboardMain .controlsContainer {
+  position: relative;
   margin-top: 2em;
   width: 100%;
   display: flex;
@@ -91,21 +93,67 @@
   align-items: center;
 }
 
+.dashboardMain .controlsContainer .controlsContainer_item.categories {
+  position: relative;
+}
+
+.dashboardMain
+  .controlsContainer
+  .controlsContainer_item.categories.showCategories {
+  background-color: #b03125;
+  color: white;
+}
+
+.dashboardMain
+  .controlsContainer
+  .controlsContainer_item.categories.showCategories
+  svg {
+  transform: rotate(180deg);
+  color: white;
+}
+
 .dashboardMain .controlsContainer .controlsContainer_item {
   width: 70%;
-  min-width: 12em;
-  height: 2.3em;
+  min-width: 11em;
+  height: 2.5em;
   font-size: 1.2em;
   text-transform: uppercase;
   cursor: pointer;
   margin-top: 1.5em;
+  border: none;
+}
+
+.dashboardMain .controlsContainer .categoriesList {
+  position: absolute;
+  top: 1.3em;
+  left: 0em;
+  z-index: 3;
+  list-style: none;
+  background-color: rgb(239, 239, 239);
+  width: 100%;
+  padding: 0;
+}
+
+.dashboardMain .controlsContainer .categoriesList .controlsContainer_item {
+  color: #062f6e;
+  min-width: 9em;
+  font-size: 1em;
+}
+
+.dashboardMain
+  .controlsContainer
+  .categoriesList
+  .controlsContainer_item.selected {
+  color: white;
+  background-color: #b03125;
 }
 
 .dashboardMain .controlsContainer .controlsContainer_item svg {
-  color: red;
+  color: #b03125;
   position: relative;
   top: 0.1em;
   left: 0.31em;
+  transition: all 0.3s ease;
 }
 
 /*
@@ -124,6 +172,11 @@
 
 .dashboardMain .mainContent .favoritesContainer .favoritesContainer_items {
   display: flex;
+  flex-wrap: wrap;
+}
+
+.dashboardMain .mainContent .favoritesContainer .favoritesContainer_items p {
+  color: white;
 }
 
 .dashboardMain .mainContent .favoritesContainer .favorites-item {
@@ -137,6 +190,8 @@
   border-radius: 4px;
   font-size: 1.2em;
   text-transform: uppercase;
+  margin: 1em;
+  text-decoration: none;
 }
 
 .dashboardMain
@@ -156,7 +211,7 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  max-height: 32em;
+  max-height: 40em;
   overflow-y: auto;
   scrollbar-width: none;
 }
@@ -227,5 +282,22 @@
 
 .fadeZoom-enter-active,
 .fadeZoom-leave-active {
+  transition: all 0.2s ease;
+}
+
+.fadeFromAbove-enter-from,
+.fadeFromAbove-leave-to {
+  opacity: 0;
+  transform: translateY(-3em);
+}
+
+.fadeFromAbove-enter-to,
+.fadeFromAbove-leave-from {
+  opacity: 1;
+  transform: translateY(0em);
+}
+
+.fadeFromAbove-enter-active,
+.fadeFromAbove-leave-active {
   transition: all 0.2s ease;
 }
