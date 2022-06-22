@@ -10,7 +10,7 @@ const props = defineProps({
 <template>
   <div class="app-item--text">
     <button @click.prevent="props.app.favorite = !props.app.favorite">
-      <transition name="switch" mode="out-in">
+      <transition name="fadeZoom" mode="out-in">
         <svg
           v-if="!props.app.favorite"
           width="50"
