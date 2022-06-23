@@ -28,6 +28,7 @@
 body {
   margin: 0;
   color: #062f6e;
+  overflow-x: hidden;
 }
 
 h1,
@@ -55,7 +56,7 @@ h3 {
   cursor: pointer;
 }
 
-.rootContainer button:active:not(.categories),
+.rootContainer button:active:not(.dropdown),
 .rootContainer a:active {
   transform: scale(0.98);
 }
@@ -89,7 +90,6 @@ header {
   position: absolute;
   top: 1px;
   z-index: 9999999;
-  /* background-color: darkgray; */
 }
 
 .mainPageContainer {
@@ -111,5 +111,58 @@ label {
 
 .mainAppContainer {
   overflow: hidden;
+}
+
+/*ANIMATIONS*/
+
+.fadeZoom-enter-from,
+.fadeZoom-leave-to {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.fadeZoom-enter-to,
+.fadeZoom-leave-from {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.fadeZoom-enter-active,
+.fadeZoom-leave-active {
+  transition: all 0.2s ease;
+}
+
+.fadeFromAbove-enter-from,
+.fadeFromAbove-leave-to {
+  opacity: 0;
+  transform: translateY(-3em);
+}
+
+.fadeFromAbove-enter-to,
+.fadeFromAbove-leave-from {
+  opacity: 1;
+  transform: translateY(0em);
+}
+
+.fadeFromAbove-enter-active,
+.fadeFromAbove-leave-active {
+  transition: all 0.2s ease;
+}
+
+.fadeFromRight-enter-from,
+.fadeFromRight-leave-to {
+  opacity: 0;
+  transform: translateX(3em);
+}
+
+.fadeFromRight-enter-to,
+.fadeFromRight-leave-from {
+  opacity: 1;
+  transform: translateX(0em);
+}
+
+.fadeFromRight-enter-active,
+.fadeFromRight-leave-active {
+  transition: all 0.5s ease;
 }
 </style>

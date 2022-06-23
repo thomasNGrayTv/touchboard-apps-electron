@@ -9,7 +9,7 @@
   align-items: center;
 }
 
-.dashboardMain .mainContent {
+.dashboardMain .appView {
   margin-top: 1em;
   width: 85%;
 }
@@ -21,18 +21,22 @@
   font-weight: 700;
 }
 
+.dashboardMain .btn.support {
+  margin-top: 2.2em;
+}
+
 .dashboardMain .vertical-divider {
   border-left: 1px solid gray;
   height: 97vh;
   width: 2em;
-  margin: 1em 1.5em;
+  margin: 1.5em;
 }
 
 .dashboardMain .horizontal-divider {
   border-bottom: 1px solid gray;
   width: 90%;
   height: 1em;
-  margin: 1em 0em;
+  margin: 0em 0em 1em 0em;
 }
 
 /*
@@ -96,6 +100,7 @@
   cursor: pointer;
   margin-top: 1.5em;
   border: none;
+  border-radius: 4px;
 }
 
 .dashboardMain .btn .supportIcon {
@@ -154,26 +159,27 @@
 .##.....##.##.....##..##..##...###
 .##.....##.##.....##.####.##....##
 */
-.dashboardMain .mainContent .headerSection {
+.dashboardMain .headerSection {
   display: flex;
 }
 
-.dashboardMain .mainContent .favoritesContainer h3 {
+.dashboardMain .favoritesContainer h3 {
   color: white;
   font-size: 1.42em;
   font-weight: 600;
+  margin: 0;
 }
 
-.dashboardMain .mainContent .favoritesContainer .favoritesContainer_items {
+.dashboardMain .favoritesContainer .favoritesContainer_items {
   display: flex;
   flex-wrap: wrap;
 }
 
-.dashboardMain .mainContent .favoritesContainer .favoritesContainer_items p {
+.dashboardMain .favoritesContainer .favoritesContainer_items p {
   color: white;
 }
 
-.dashboardMain .mainContent .favoritesContainer .favorites-item {
+.dashboardMain .favoritesContainer .favorites-item {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -188,20 +194,17 @@
   text-decoration: none;
 }
 
-.dashboardMain
-  .mainContent
-  .favoritesContainer
-  .favorites-item:not(:first-of-type) {
+.dashboardMain .favoritesContainer .favorites-item:not(:first-of-type) {
   margin-left: 1em;
 }
 
-.dashboardMain .mainContent .favoritesContainer .favorites-item img {
+.dashboardMain .favoritesContainer .favorites-item img {
   width: 3em;
   height: 3em;
   margin-right: 0.2em;
 }
 
-.dashboardMain .mainContent .apps {
+.dashboardMain .apps {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -210,11 +213,11 @@
   scrollbar-width: none;
 }
 
-.dashboardMain .mainContent .apps::-webkit-scrollbar {
+.dashboardMain .apps::-webkit-scrollbar {
   display: none;
 }
 
-.dashboardMain .mainContent .apps .app-item {
+.dashboardMain .apps .app-item {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -229,13 +232,13 @@
   cursor: pointer;
 }
 
-.dashboardMain .mainContent .apps .app-item .app-btns_container {
+.dashboardMain .apps .app-item .app-btns_container {
   position: absolute;
   top: 0.51em;
   right: 12.5%;
 }
 
-.dashboardMain .mainContent .apps .app-item .app-btns_container button {
+.dashboardMain .apps .app-item .app-btns_container button {
   display: block;
   width: 10em;
   height: 2.5em;
@@ -244,97 +247,38 @@
   color: white;
 }
 
-.dashboardMain
-  .mainContent
-  .apps
-  .app-item
-  .app-btns_container
-  button.launchAppBtn {
+.dashboardMain .apps .app-item .app-btns_container button.launchAppBtn {
   background-color: #1cd011;
 }
-.dashboardMain
-  .mainContent
-  .apps
-  .app-item
-  .app-btns_container
-  button.previewAppBtn {
+.dashboardMain .apps .app-item .app-btns_container button.previewAppBtn {
   background-color: #ffb101;
 }
 
-.dashboardMain
-  .mainContent
-  .apps
-  .app-item
-  .app-btns_container
-  button:first-of-type {
+.dashboardMain .apps .app-item .app-btns_container button:first-of-type {
   margin-bottom: 0.7em;
 }
 
-.dashboardMain .mainContent .apps .app-item .app-item--text {
+.dashboardMain .apps .app-item .app-item--text {
   display: flex;
   align-items: center;
   margin-left: 1em;
 }
 
-.dashboardMain .mainContent .apps .app-item .app-item--text button {
+.dashboardMain .apps .app-item .app-item--text button {
   background-color: #062f6e;
   color: #062f6e;
   border: none;
   cursor: pointer;
 }
 
-.dashboardMain .mainContent .apps .app-item .app-item--text span {
+.dashboardMain .apps .app-item .app-item--text span {
   text-decoration: none;
   color: white;
   margin-left: 1em;
   font-size: 1.3em;
 }
 
-.dashboardMain .mainContent .apps .app-item .app-item--image {
+.dashboardMain .apps .app-item .app-item--image {
   width: 50%;
   height: 100%;
-}
-
-/*
-.########.########.....###....##....##..######..####.########.####..#######..##....##
-....##....##.....##...##.##...###...##.##....##..##.....##.....##..##.....##.###...##
-....##....##.....##..##...##..####..##.##........##.....##.....##..##.....##.####..##
-....##....########..##.....##.##.##.##..######...##.....##.....##..##.....##.##.##.##
-....##....##...##...#########.##..####.......##..##.....##.....##..##.....##.##..####
-....##....##....##..##.....##.##...###.##....##..##.....##.....##..##.....##.##...###
-....##....##.....##.##.....##.##....##..######..####....##....####..#######..##....##
-*/
-
-.fadeZoom-enter-from,
-.fadeZoom-leave-to {
-  opacity: 0;
-  transform: scale(0);
-}
-
-.fadeZoom-enter-to,
-.fadeZoom-leave-from {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.fadeZoom-enter-active,
-.fadeZoom-leave-active {
-  transition: all 0.2s ease;
-}
-
-.fadeFromAbove-enter-from,
-.fadeFromAbove-leave-to {
-  opacity: 0;
-  transform: translateY(-3em);
-}
-
-.fadeFromAbove-enter-to,
-.fadeFromAbove-leave-from {
-  opacity: 1;
-  transform: translateY(0em);
-}
-
-.fadeFromAbove-enter-active,
-.fadeFromAbove-leave-active {
-  transition: all 0.2s ease;
 }

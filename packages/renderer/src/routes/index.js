@@ -3,19 +3,19 @@ import { createRouter, createWebHashHistory } from "vue-router";
 const routes = [
   {
     path: "/",
+    name: "login",
+    component: () => import("../parent/LoginView.vue"),
+  },
+  {
+    path: "/dashboard",
     name: "dashboard",
     component: () => import("../parent/Dashboard.vue"),
     redirect: {
-      name: "login",
+      name: "dashboard-main",
     },
     children: [
       {
-        path: "",
-        name: "login",
-        component: () => import("../pages/dashboard/LoginView.vue"),
-      },
-      {
-        path: "/dashboard-main",
+        path: "/",
         name: "dashboard-main",
         component: () => import("../pages/dashboard/Main.vue"),
       },

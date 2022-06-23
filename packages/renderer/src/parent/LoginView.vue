@@ -1,6 +1,6 @@
 <script setup>
-import Login from "../../components/Login.vue";
-import { router } from "../../routes/index";
+import Login from "../components/Login.vue";
+import { router } from "../routes/index";
 </script>
 
 <template>

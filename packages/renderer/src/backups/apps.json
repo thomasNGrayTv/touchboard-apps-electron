@@ -1,0 +1,154 @@
+{
+  "data": [
+    {
+      "name": "Fact Finder",
+      "link": "fact-finder",
+      "favorite": true,
+      "categories": ["Favorites", "All Apps", "Interactive"],
+      "image": {
+        "favorite": "/src/assets/basketball.png",
+        "preview": "/src/assets/map.png"
+      }
+    },
+    {
+      "name": "gPoll",
+      "link": "g-poll",
+      "favorite": true,
+      "categories": ["Favorites", "All Apps", "Gsync"],
+      "image": {
+        "favorite": "/src/assets/flag.png",
+        "preview": "/src/assets/map.png"
+      }
+    },
+    {
+      "name": "Whiteboard",
+      "link": "whiteboard",
+      "favorite": false,
+      "categories": ["All Apps", "Interactive"],
+      "image": {
+        "favorite": "/src/assets/flag.png",
+        "preview": "/src/assets/map.png"
+      }
+    },
+    {
+      "name": "Fact Finder",
+      "link": "fact-finder",
+      "favorite": false,
+      "categories": ["All Apps", "Maps"],
+      "image": {
+        "favorite": "/src/assets/flag.png",
+        "preview": "/src/assets/map.png"
+      }
+    },
+    {
+      "name": "gPoll",
+      "link": "g-poll",
+      "favorite": false,
+      "categories": ["All Apps", "Elections"],
+      "image": {
+        "favorite": "/src/assets/flag.png",
+        "preview": "/src/assets/map.png"
+      }
+    },
+    {
+      "name": "Whiteboard",
+      "link": "whiteboard",
+      "favorite": false,
+      "categories": ["All Apps", "Gsync"],
+      "image": {
+        "favorite": "/src/assets/flag.png",
+        "preview": "/src/assets/map.png"
+      }
+    },
+    {
+      "name": "Fact Finder",
+      "link": "fact-finder",
+      "favorite": false,
+      "categories": ["All Apps", "Interactive"],
+      "image": {
+        "favorite": "/src/assets/flag.png",
+        "preview": "/src/assets/map.png"
+      }
+    },
+    {
+      "name": "gPoll",
+      "link": "g-poll",
+      "favorite": false,
+      "categories": ["All Apps", "Gsync"],
+      "image": {
+        "favorite": "/src/assets/flag.png",
+        "preview": "/src/assets/map.png"
+      }
+    },
+    {
+      "name": "Whiteboard",
+      "link": "whiteboard",
+      "favorite": false,
+      "categories": ["All Apps", "Interactive"],
+      "image": {
+        "favorite": "/src/assets/flag.png",
+        "preview": "/src/assets/map.png"
+      }
+    },
+    {
+      "name": "Fact Finder",
+      "link": "fact-finder",
+      "favorite": false,
+      "categories": ["All Apps", "Interactive"],
+      "image": {
+        "favorite": "/src/assets/flag.png",
+        "preview": "/src/assets/map.png"
+      }
+    },
+    {
+      "name": "gPoll",
+      "link": "g-poll",
+      "favorite": false,
+      "categories": ["All Apps", "Gsync"],
+      "image": {
+        "favorite": "/src/assets/flag.png",
+        "preview": "/src/assets/map.png"
+      }
+    },
+    {
+      "name": "Whiteboard",
+      "link": "whiteboard",
+      "favorite": false,
+      "categories": ["All Apps", "Interactive"],
+      "image": {
+        "favorite": "/src/assets/flag.png",
+        "preview": "/src/assets/map.png"
+      }
+    },
+    {
+      "name": "Fact Finder",
+      "link": "fact-finder",
+      "favorite": false,
+      "categories": ["All Apps", "Interactive"],
+      "image": {
+        "favorite": "/src/assets/flag.png",
+        "preview": "/src/assets/map.png"
+      }
+    },
+    {
+      "name": "gPoll",
+      "link": "g-poll",
+      "favorite": false,
+      "categories": ["All Apps", "Gsync"],
+      "image": {
+        "favorite": "/src/assets/flag.png",
+        "preview": "/src/assets/map.png"
+      }
+    },
+    {
+      "name": "Whiteboard",
+      "link": "whiteboard",
+      "favorite": false,
+      "categories": ["All Apps", "Interactive"],
+      "image": {
+        "favorite": "/src/assets/flag.png",
+        "preview": "/src/assets/map.png"
+      }
+    }
+  ]
+}
