@@ -19,6 +19,11 @@ const routes = [
         name: "dashboard-main",
         component: () => import("../pages/dashboard/Main.vue"),
       },
+      {
+        path: "/dashboard-prelaunch",
+        name: "dashboard-prelaunch",
+        component: () => import("../pages/dashboard/Prelaunch.vue"),
+      },
     ],
   },
   {

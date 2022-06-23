@@ -28,7 +28,6 @@
 body {
   margin: 0;
   color: #062f6e;
-  overflow: hidden;
 }
 
 h1,

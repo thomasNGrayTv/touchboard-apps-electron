@@ -285,7 +285,10 @@ console.log(store.categories);
           class="app-item"
           v-for="(app, index) in store.apps"
           :key="index"
-          :to="{ name: app.link }"
+          :to="{
+            name: 'dashboard-prelaunch',
+            query: { appData: JSON.stringify(app) },
+          }"
         >
           <app-item :app="app" :index="index"></app-item>
         </router-link>
