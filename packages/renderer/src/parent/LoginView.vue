@@ -1,6 +1,14 @@
 <script setup>
 import Login from "../components/Login.vue";
 import { router } from "../routes/index";
+
+//testing local storage
+let pin = localStorage.getItem("pin");
+
+if (!pin) {
+  pin = (Math.random() + 1).toString(36).substring(7);
+  localStorage.setItem("pin", pin);
+}
 </script>
 
 <template>
@@ -19,7 +27,8 @@ import { router } from "../routes/index";
     </div>
     <div class="titleFormContainer">
       <h1>Gray Interactive Television SpringBoard</h1>
-      <Login @login-station="router.push({ name: 'dashboard-main' })"></Login>
+      <Login @login-station="router.push({ name: 'dashboard' })"></Login>
+      <p>Pin: {{ pin }}</p>
     </div>
   </div>
 </template>

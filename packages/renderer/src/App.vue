@@ -1,8 +1,20 @@
 <script setup></script>
 
 <template>
+  <div
+    class="background"
+    :style="{
+      backgroundImage: `url('/src/assets/backgroundImage.jpg')`,
+    }"
+  ></div>
   <div class="rootContainer">
-    <router-view></router-view>
+    <router-view v-slot="{ Component, route }">
+      <transition name="fade" mode="out-in">
+        <div :key="route.name">
+          <component :is="Component"></component>
+        </div>
+      </transition>
+    </router-view>
   </div>
 </template>
 
@@ -114,6 +126,21 @@ label {
 }
 
 /*ANIMATIONS*/
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.4s ease;
+}
 
 .fadeZoom-enter-from,
 .fadeZoom-leave-to {
