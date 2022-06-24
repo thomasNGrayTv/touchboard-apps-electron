@@ -11,8 +11,8 @@
       "favorite": true,
       "categories": ["Favorites", "All Apps", "Interactive"],
       "image": {
-        "favorite": "/src/assets/basketball.png",
-        "preview": "/src/assets/map.png"
+        "favorite": "basketball",
+        "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
       }
     },
     {
@@ -27,7 +27,7 @@
       "categories": ["Favorites", "All Apps", "Gsync"],
       "image": {
         "favorite": "/src/assets/flag.png",
-        "preview": "/src/assets/map.png"
+        "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
       }
     },
     {
@@ -42,7 +42,7 @@
       "categories": ["All Apps", "Interactive"],
       "image": {
         "favorite": "/src/assets/flag.png",
-        "preview": "/src/assets/map.png"
+        "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
       }
     },
     {
@@ -57,7 +57,7 @@
       "categories": ["All Apps", "Maps"],
       "image": {
         "favorite": "/src/assets/flag.png",
-        "preview": "/src/assets/map.png"
+        "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
       }
     },
     {
@@ -72,7 +72,7 @@
       "categories": ["All Apps", "Elections"],
       "image": {
         "favorite": "/src/assets/flag.png",
-        "preview": "/src/assets/map.png"
+        "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
       }
     },
     {
@@ -87,7 +87,7 @@
       "categories": ["All Apps", "Gsync"],
       "image": {
         "favorite": "/src/assets/flag.png",
-        "preview": "/src/assets/map.png"
+        "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
       }
     },
     {
@@ -102,7 +102,7 @@
       "categories": ["All Apps", "Interactive"],
       "image": {
         "favorite": "/src/assets/flag.png",
-        "preview": "/src/assets/map.png"
+        "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
       }
     },
     {
@@ -117,7 +117,7 @@
       "categories": ["All Apps", "Gsync"],
       "image": {
         "favorite": "/src/assets/flag.png",
-        "preview": "/src/assets/map.png"
+        "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
       }
     },
     {
@@ -132,7 +132,7 @@
       "categories": ["All Apps", "Interactive"],
       "image": {
         "favorite": "/src/assets/flag.png",
-        "preview": "/src/assets/map.png"
+        "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
       }
     },
     {
@@ -147,7 +147,7 @@
       "categories": ["All Apps", "Interactive"],
       "image": {
         "favorite": "/src/assets/flag.png",
-        "preview": "/src/assets/map.png"
+        "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
       }
     },
     {
@@ -162,7 +162,7 @@
       "categories": ["All Apps", "Gsync"],
       "image": {
         "favorite": "/src/assets/flag.png",
-        "preview": "/src/assets/map.png"
+        "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
       }
     },
     {
@@ -177,7 +177,7 @@
       "categories": ["All Apps", "Interactive"],
       "image": {
         "favorite": "/src/assets/flag.png",
-        "preview": "/src/assets/map.png"
+        "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
       }
     },
     {
@@ -192,7 +192,7 @@
       "categories": ["All Apps", "Interactive"],
       "image": {
         "favorite": "/src/assets/flag.png",
-        "preview": "/src/assets/map.png"
+        "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
       }
     },
     {
@@ -207,7 +207,7 @@
       "categories": ["All Apps", "Gsync"],
       "image": {
         "favorite": "/src/assets/flag.png",
-        "preview": "/src/assets/map.png"
+        "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
       }
     },
     {
@@ -222,7 +222,7 @@
       "categories": ["All Apps", "Interactive"],
       "image": {
         "favorite": "/src/assets/flag.png",
-        "preview": "/src/assets/map.png"
+        "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
       }
     }
   ]

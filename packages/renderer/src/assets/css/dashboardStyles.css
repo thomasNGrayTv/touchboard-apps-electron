@@ -201,10 +201,11 @@
   margin-left: 1em;
 }
 
-.dashboardMain .favoritesContainer .favorites-item img {
-  width: 3em;
-  height: 3em;
+.dashboardMain .favoritesContainer .favorites-item svg {
+  width: 5em;
+  height: 5em;
   margin-right: 0.2em;
+  color: #062f6e;
 }
 
 .dashboardMain .apps {
