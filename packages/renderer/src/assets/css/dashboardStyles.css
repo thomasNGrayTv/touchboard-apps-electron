@@ -183,6 +183,7 @@
 }
 
 .dashboardMain .favoritesContainer .favorites-item {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -205,7 +206,13 @@
   width: 5em;
   height: 5em;
   margin-right: 0.2em;
+  margin-left: -1em;
   color: #062f6e;
+}
+
+.dashboardMain .favoritesContainer .favorites-item span {
+  margin-left: -0.75em;
+  margin-right: 0.52em;
 }
 
 .dashboardMain .apps {
