@@ -104,15 +104,26 @@
 }
 
 .dashboardMain .btn .supportIcon {
-  width: 2em;
-  height: 1.5em;
+  height: 3.5em;
   display: inline;
-  margin-right: 0.71em;
+  margin-left: -0.51em;
+}
+
+.dashboardMain .btn .supportIcon + span {
+  margin-left: -0.52em;
 }
 
 .dashboardMain .btn.showDropDown {
   background-color: #b03125;
   color: white;
+}
+
+.dashboardMain .btn svg:not(.supportIcon) {
+  color: #b03125;
+  position: relative;
+  top: -0.1em;
+  left: 0.31em;
+  transition: all 0.3s ease;
 }
 
 .dashboardMain .btn.showDropDown svg {
@@ -140,14 +151,6 @@
 .dashboardMain .btnList .btn.selected {
   color: white;
   background-color: #b03125;
-}
-
-.dashboardMain .btn svg {
-  color: #b03125;
-  position: relative;
-  top: -0.1em;
-  left: 0.31em;
-  transition: all 0.3s ease;
 }
 
 /*
