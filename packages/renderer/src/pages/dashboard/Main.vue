@@ -4,6 +4,7 @@ import AppItem from "./AppItem.vue";
 import { mainStore } from "../../stores/mainStore";
 
 const store = mainStore();
+store.updateSideBar("main");
 </script>
 
 <template>

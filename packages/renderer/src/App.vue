@@ -16,7 +16,7 @@
 @import "./assets/css/screenShare.css";
 @import "./assets/css/pollStyles.css";
 @import "./assets/css/loginStyles.css";
-
+@import "./assets/css/prelaunchStyles.css";
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap");
 
 * {
@@ -28,7 +28,7 @@
 body {
   margin: 0;
   color: #062f6e;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 h1,

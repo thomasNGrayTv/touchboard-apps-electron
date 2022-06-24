@@ -7,6 +7,7 @@ export const mainStore = defineStore({
     return {
       showDraw: false,
       apps: [],
+      sideBarControls: "main",
     };
   },
   getters: {
@@ -37,6 +38,9 @@ export const mainStore = defineStore({
     },
     toggleFavorite(index) {
       this.apps[index].favorite = !this.apps[index].favorite;
+    },
+    updateSideBar(page) {
+      this.sideBarControls = page;
     },
   },
 });
