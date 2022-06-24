@@ -40,6 +40,7 @@ let win: BrowserWindow | null = null;
 async function createWindow() {
   win = new BrowserWindow({
     title: "Touchscreen Apps",
+    autoHideMenuBar: true,
     width: 1680,
     height: 900,
     webPreferences: {
