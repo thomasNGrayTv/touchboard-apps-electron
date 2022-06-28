@@ -11,6 +11,7 @@
       "favorite": true,
       "categories": ["Favorites", "All Apps", "Interactive"],
       "image": {
+        "nav": "/src/assets/factFinderIcon.png",
         "favorite": "basketball",
         "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
       }
@@ -26,6 +27,7 @@
       "favorite": true,
       "categories": ["Favorites", "All Apps", "Gsync"],
       "image": {
+        "nav": "/src/assets/gpollIcon.png",
         "favorite": "/src/assets/flag.png",
         "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
       }
@@ -41,6 +43,7 @@
       "favorite": false,
       "categories": ["All Apps", "Interactive"],
       "image": {
+        "nav": "/src/assets/white_board.png",
         "favorite": "/src/assets/flag.png",
         "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
       }
@@ -51,176 +54,12 @@
         "options": [],
         "themes": []
       },
-      "name": "Fact Finder",
-      "link": "fact-finder",
+      "name": "Map",
+      "link": "map",
       "favorite": false,
       "categories": ["All Apps", "Maps"],
       "image": {
-        "favorite": "/src/assets/flag.png",
-        "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
-      }
-    },
-    {
-      "prelaunchConfig": {
-        "sideBarControls": [],
-        "options": [],
-        "themes": []
-      },
-      "name": "gPoll",
-      "link": "g-poll",
-      "favorite": false,
-      "categories": ["All Apps", "Elections"],
-      "image": {
-        "favorite": "/src/assets/flag.png",
-        "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
-      }
-    },
-    {
-      "prelaunchConfig": {
-        "sideBarControls": [],
-        "options": [],
-        "themes": []
-      },
-      "name": "Whiteboard",
-      "link": "whiteboard",
-      "favorite": false,
-      "categories": ["All Apps", "Gsync"],
-      "image": {
-        "favorite": "/src/assets/flag.png",
-        "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
-      }
-    },
-    {
-      "prelaunchConfig": {
-        "sideBarControls": [],
-        "options": [],
-        "themes": []
-      },
-      "name": "Fact Finder",
-      "link": "fact-finder",
-      "favorite": false,
-      "categories": ["All Apps", "Interactive"],
-      "image": {
-        "favorite": "/src/assets/flag.png",
-        "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
-      }
-    },
-    {
-      "prelaunchConfig": {
-        "sideBarControls": [],
-        "options": [],
-        "themes": []
-      },
-      "name": "gPoll",
-      "link": "g-poll",
-      "favorite": false,
-      "categories": ["All Apps", "Gsync"],
-      "image": {
-        "favorite": "/src/assets/flag.png",
-        "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
-      }
-    },
-    {
-      "prelaunchConfig": {
-        "sideBarControls": [],
-        "options": [],
-        "themes": []
-      },
-      "name": "Whiteboard",
-      "link": "whiteboard",
-      "favorite": false,
-      "categories": ["All Apps", "Interactive"],
-      "image": {
-        "favorite": "/src/assets/flag.png",
-        "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
-      }
-    },
-    {
-      "prelaunchConfig": {
-        "sideBarControls": [],
-        "options": [],
-        "themes": []
-      },
-      "name": "Fact Finder",
-      "link": "fact-finder",
-      "favorite": false,
-      "categories": ["All Apps", "Interactive"],
-      "image": {
-        "favorite": "/src/assets/flag.png",
-        "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
-      }
-    },
-    {
-      "prelaunchConfig": {
-        "sideBarControls": [],
-        "options": [],
-        "themes": []
-      },
-      "name": "gPoll",
-      "link": "g-poll",
-      "favorite": false,
-      "categories": ["All Apps", "Gsync"],
-      "image": {
-        "favorite": "/src/assets/flag.png",
-        "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
-      }
-    },
-    {
-      "prelaunchConfig": {
-        "sideBarControls": [],
-        "options": [],
-        "themes": []
-      },
-      "name": "Whiteboard",
-      "link": "whiteboard",
-      "favorite": false,
-      "categories": ["All Apps", "Interactive"],
-      "image": {
-        "favorite": "/src/assets/flag.png",
-        "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
-      }
-    },
-    {
-      "prelaunchConfig": {
-        "sideBarControls": [],
-        "options": [],
-        "themes": []
-      },
-      "name": "Fact Finder",
-      "link": "fact-finder",
-      "favorite": false,
-      "categories": ["All Apps", "Interactive"],
-      "image": {
-        "favorite": "/src/assets/flag.png",
-        "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
-      }
-    },
-    {
-      "prelaunchConfig": {
-        "sideBarControls": [],
-        "options": [],
-        "themes": []
-      },
-      "name": "gPoll",
-      "link": "g-poll",
-      "favorite": false,
-      "categories": ["All Apps", "Gsync"],
-      "image": {
-        "favorite": "/src/assets/flag.png",
-        "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
-      }
-    },
-    {
-      "prelaunchConfig": {
-        "sideBarControls": [],
-        "options": [],
-        "themes": []
-      },
-      "name": "Whiteboard",
-      "link": "whiteboard",
-      "favorite": false,
-      "categories": ["All Apps", "Interactive"],
-      "image": {
+        "nav": "/src/assets/factFinderIcon.png",
         "favorite": "/src/assets/flag.png",
         "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
       }

@@ -6,8 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="script-src 'self' 'unsafe-inline';"
+      content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;"
     />
+    <script src="/lib/Cesium/Cesium.js"></script>
+    <script>
+      window["CESIUM_BASE_URL"] = "/lib/Cesium/";
+    </script>
+    <link rel="stylesheet" href="/lib/Cesium/Widgets/widgets.css" />
     <title>Touchboard Apps</title>
   </head>
   <body>
@@ -15,6 +20,7 @@
     <script>
       var exports = { __esModule: true };
     </script>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

@@ -49,6 +49,11 @@ const routes = [
         name: "whiteboard",
         component: () => import("../pages/app-launch/Whiteboard.vue"),
       },
+      {
+        path: "/app-launch/map",
+        name: "map",
+        component: () => import("../pages/app-launch/Map.vue"),
+      },
     ],
   },
 ];

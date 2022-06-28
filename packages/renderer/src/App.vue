@@ -23,6 +23,7 @@
 @import "./assets/css/pollStyles.css";
 @import "./assets/css/loginStyles.css";
 @import "./assets/css/prelaunchStyles.css";
+@import "./assets/css/mapStyles.css";
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap");
 
 * {

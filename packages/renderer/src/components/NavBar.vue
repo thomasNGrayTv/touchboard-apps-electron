@@ -90,21 +90,13 @@ function toggleFullScreen() {
     </div>
     <div v-if="showNavMenu" class="navMenu">
       <router-link
-        :to="{ name: 'fact-finder' }"
+        v-for="(app, index) in store.apps"
+        :key="index"
+        :to="{ name: app.link }"
         class="navItem"
-        title="fact finder"
+        :title="app.name"
       >
-        <img src="../assets/factFinderIcon.png" alt="fact finder icon" />
-      </router-link>
-      <router-link :to="{ name: 'g-poll' }" class="navItem" title="gray polls">
-        <img src="../assets/gpollIcon.png" alt="poll icon" />
-      </router-link>
-      <router-link
-        :to="{ name: 'whiteboard' }"
-        class="navItem"
-        title="whiteboard"
-      >
-        <img src="../assets/white_board.png" alt="whiteboard icon" />
+        <img :src="app.image.nav" alt="fact finder icon" />
       </router-link>
     </div>
   </header>
