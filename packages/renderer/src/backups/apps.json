@@ -14,7 +14,8 @@
         "nav": "/src/assets/factFinderIcon.png",
         "favorite": "basketball",
         "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
-      }
+      },
+      "created_at": "2021-11-12"
     },
     {
       "prelaunchConfig": {
@@ -30,7 +31,8 @@
         "nav": "/src/assets/gpollIcon.png",
         "favorite": "/src/assets/flag.png",
         "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
-      }
+      },
+      "created_at": "2022-01-22"
     },
     {
       "prelaunchConfig": {
@@ -46,7 +48,8 @@
         "nav": "/src/assets/white_board.png",
         "favorite": "/src/assets/flag.png",
         "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
-      }
+      },
+      "created_at": "2021-08-19"
     },
     {
       "prelaunchConfig": {
@@ -62,7 +65,8 @@
         "nav": "/src/assets/factFinderIcon.png",
         "favorite": "/src/assets/flag.png",
         "preview": "https://touchscreen.gray.tv/modules/grayTouchApps/templates/image/corpmap.png"
-      }
+      },
+      "created_at": "2021-03-12"
     }
   ]
 }

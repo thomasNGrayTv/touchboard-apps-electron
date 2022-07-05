@@ -1,6 +1,8 @@
 <script setup>
+import { ref, onMounted } from "vue";
 import { mainStore } from "../../stores/mainStore";
 
+let isNew = ref(false);
 const store = mainStore();
 const props = defineProps({
   app: {
@@ -12,9 +14,18 @@ const props = defineProps({
     required: true,
   },
 });
+
+function checkNewness(app) {
+  if (store.newerApps.includes(app)) {
+    isNew.value = true;
+  }
+}
+
+checkNewness(props.app);
 </script>
 
 <template>
+  <div v-if="isNew" class="app-item-newFlag">New</div>
   <div class="app-item--text">
     <button @click.prevent="store.toggleFavorite(index)">
       <transition name="fadeZoom" mode="out-in">

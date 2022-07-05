@@ -3,6 +3,7 @@ import Categories from "./Categories.vue";
 import { mainStore } from "../../stores/mainStore";
 
 const store = mainStore();
+const appUpdates = store.appUpdates;
 </script>
 
 <template>
@@ -10,9 +11,15 @@ const store = mainStore();
     <transition name="fadeFromAbove" mode="out-in">
       <div v-if="store.sideBarControls === 'main'" class="main">
         <Categories></Categories>
-        <button class="btn">
-          <span>News Blurb</span>
-        </button>
+        <ul class="sideBar_newsUpdates">
+          <li
+            v-for="(update, index) in appUpdates"
+            :key="index"
+            :class="{ redBullet: update.type === 'outage' }"
+          >
+            {{ update.description }}
+          </li>
+        </ul>
       </div>
       <div v-else class="gPoll">
         <button class="btn">

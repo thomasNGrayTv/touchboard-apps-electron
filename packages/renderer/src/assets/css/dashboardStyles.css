@@ -87,6 +87,43 @@
   align-items: center;
 }
 
+.dashboardMain .controlsContainer .main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboardMain .controlsContainer .sideBar_newsUpdates {
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 1em 1.52em;
+  width: 11.75em;
+  margin-top: 3em;
+  font-size: 1.2em;
+  list-style: none;
+}
+
+.dashboardMain .controlsContainer .sideBar_newsUpdates li {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0.2em;
+  width: 9em;
+}
+
+.dashboardMain .controlsContainer .sideBar_newsUpdates li::before {
+  content: "\2022";
+  color: white;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.dashboardMain .controlsContainer .sideBar_newsUpdates li.redBullet::before {
+  color: red; /* Change the color */
+}
+
 .dashboardMain .btn {
   position: relative;
   display: flex;
@@ -238,9 +275,21 @@
   border: 1px solid white;
   margin: 1em 5em 1em 0em;
   border-radius: 5px;
-  overflow: hidden;
   text-decoration: none;
   cursor: pointer;
+}
+
+.dashboardMain .apps .app-item .app-item-newFlag {
+  position: absolute;
+  left: -2.35em;
+  background-color: yellow;
+  width: 2.3em;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 1.1em;
 }
 
 .dashboardMain .apps .app-item .app-btns_container {

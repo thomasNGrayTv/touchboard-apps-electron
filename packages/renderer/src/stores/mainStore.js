@@ -8,10 +8,29 @@ export const mainStore = defineStore({
       showDraw: false,
       apps: [],
       sideBarControls: "main",
+      appUpdates: [
+        {
+          type: "outage",
+          description: "Closings app is down. IT is aware of the problem",
+        },
+        {
+          type: "new app",
+          description: "Check out the new app we have for on-air polls!",
+        },
+      ],
     };
   },
   getters: {
     favoriteApps: (state) => state.apps.filter((app) => app.favorite === true),
+    newerApps: (state) =>
+      state.apps.filter((app) => {
+        const newStartDate = new Date("2022-01-01");
+        const appDate = new Date(app.created_at);
+        if (appDate.setHours(0, 0, 0, 0) >= newStartDate.setHours(0, 0, 0, 0)) {
+          return true;
+        }
+        return false;
+      }),
     categories: (state) => {
       const categoriesArrays = state.apps.map((app) => app.categories);
       const categoriesUnique = [];
