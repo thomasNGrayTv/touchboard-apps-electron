@@ -12,13 +12,6 @@ themesStore.importThemes(themes);
 //hard coded for now, but this would be a prop passed in from pre-launch
 themesStore.changeTheme(themes[0]);
 
-function reset() {
-  scaleElement.style.transform = "scale(1)";
-
-  angleScale.angle = 0;
-  angleScale.scale = 1;
-}
-
 function dragMoveListener(event) {
   var target = event.target;
   // keep the dragged position in the data-x/data-y attributes
@@ -31,6 +24,13 @@ function dragMoveListener(event) {
   // update the posiion attributes
   target.setAttribute("data-x", x);
   target.setAttribute("data-y", y);
+}
+
+function reset(el, angleScale) {
+  el.style.transform = "scale(1)";
+
+  angleScale.angle = 0;
+  angleScale.scale = 1;
 }
 
 function gestureIt(e) {
@@ -65,7 +65,7 @@ function gestureIt(e) {
         end(event) {
           angleScale.angle = angleScale.angle + event.angle;
           angleScale.scale = angleScale.scale * event.scale;
-          resetTimeout = setTimeout(reset, 1000);
+          resetTimeout = setTimeout(reset(scaleElement, angleScale), 1000);
           scaleElement.classList.add("reset");
         },
       },

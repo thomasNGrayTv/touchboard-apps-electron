@@ -28,6 +28,10 @@
   user-select: none;
 }
 
+.gesture-area .scale-element {
+  width: 10em;
+}
+
 #scale-element {
   display: block;
   max-width: 100%;
