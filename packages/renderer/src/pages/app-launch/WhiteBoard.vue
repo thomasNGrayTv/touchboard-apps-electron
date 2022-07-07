@@ -47,8 +47,8 @@ function gestureIt(e) {
       listeners: {
         start(event) {
           angleScale.angle -= event.angle;
-          clearTimeout(resetTimeout);
-          scaleElement.classList.remove("reset");
+          // clearTimeout(resetTimeout);
+          // scaleElement.classList.remove("reset");
         },
         move(event) {
           // document.body.appendChild(new Text(event.scale))
@@ -65,8 +65,8 @@ function gestureIt(e) {
         end(event) {
           angleScale.angle = angleScale.angle + event.angle;
           angleScale.scale = angleScale.scale * event.scale;
-          resetTimeout = setTimeout(reset(scaleElement, angleScale), 1000);
-          scaleElement.classList.add("reset");
+          // resetTimeout = setTimeout(reset(scaleElement, angleScale), 1000);
+          // scaleElement.classList.add("reset");
         },
       },
     })
