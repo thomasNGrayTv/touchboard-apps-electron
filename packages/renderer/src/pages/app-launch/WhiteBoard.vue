@@ -1,12 +1,16 @@
 <script setup>
 import interact from "interactjs";
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 import themes from "../../backups/themes.json";
 import { storeToRefs } from "pinia";
 import { themeStore } from "../../stores/themeStore";
 
 const themesStore = themeStore();
 const { themeSelected } = storeToRefs(themesStore);
+let angleScale = ref({
+  angle: 0,
+  scale: 1,
+});
 
 themesStore.importThemes(themes);
 //hard coded for now, but this would be a prop passed in from pre-launch
@@ -26,11 +30,11 @@ function dragMoveListener(event) {
   target.setAttribute("data-y", y);
 }
 
-function reset(el, angleScale) {
+function reset(el) {
   el.style.transform = "scale(1)";
 
-  angleScale.angle = 0;
-  angleScale.scale = 1;
+  angleScale.value.angle = 0;
+  angleScale.value.scale = 1;
 }
 
 function gestureIt(e) {
@@ -38,22 +42,19 @@ function gestureIt(e) {
   var gestureArea = el.closest(".gesture-area");
   var scaleElement = gestureArea.firstChild;
   var resetTimeout;
-  var angleScale = {
-    angle: 0,
-    scale: 1,
-  };
+
   interact(gestureArea)
     .gesturable({
       listeners: {
         start(event) {
-          angleScale.angle -= event.angle;
+          angleScale.value.angle -= event.angle;
           // clearTimeout(resetTimeout);
           // scaleElement.classList.remove("reset");
         },
         move(event) {
           // document.body.appendChild(new Text(event.scale))
-          var currentAngle = event.angle + angleScale.angle;
-          var currentScale = event.scale * angleScale.scale;
+          var currentAngle = event.angle + angleScale.value.angle;
+          var currentScale = event.scale * angleScale.value.scale;
           scaleElement.style.transform =
             "rotate(" + currentAngle + "deg)" + "scale(" + currentScale + ")";
 
@@ -63,9 +64,9 @@ function gestureIt(e) {
           dragMoveListener(event);
         },
         end(event) {
-          angleScale.angle = angleScale.angle + event.angle;
-          angleScale.scale = angleScale.scale * event.scale;
-          // resetTimeout = setTimeout(reset(scaleElement, angleScale), 1000);
+          angleScale.value.angle = angleScale.value.angle + event.angle;
+          angleScale.value.scale = angleScale.value.scale * event.scale;
+          // resetTimeout = setTimeout(reset(scaleElement), 1000);
           // scaleElement.classList.add("reset");
         },
       },
