@@ -36,7 +36,7 @@ function dragMoveListener(event) {
 function gestureIt(e) {
   var el = e.target;
   var gestureArea = el.closest(".gesture-area");
-  var scaleElement = el.querySelector(".scale-element");
+  var scaleElement = gestureArea.firstChild;
   var resetTimeout;
   var angleScale = {
     angle: 0,
