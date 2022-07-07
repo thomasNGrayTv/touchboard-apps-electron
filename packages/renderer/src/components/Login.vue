@@ -35,6 +35,13 @@ function enter(el, done) {
     onComplete: done,
   });
 }
+
+function openKeyboard(e) {
+  var el = e.target;
+  console.log(el);
+  el.dispatchEvent(new KeyboardEvent("keydown", { key: "Meta" }));
+  el.dispatchEvent(new KeyboardEvent("keydown", { key: "o", ctrlKey: true }));
+}
 </script>
 
 <template>
@@ -44,6 +51,7 @@ function enter(el, done) {
         <p class="flexIt">
           <BaseInput
             :modelValue="stationName"
+            @focus="openKeyboard"
             @change="handleChange($event, 'stationName')"
             @input="
               errors.stationName ? handleChange($event, 'stationName') : null
@@ -56,6 +64,7 @@ function enter(el, done) {
         <p class="flexIt">
           <BaseInput
             :modelValue="apiKey"
+            @focus="openKeyboard"
             @change="handleChange($event, 'apiKey')"
             @input="errors.apiKey ? handleChange($event, 'apiKey') : null"
             :error="errors.apiKey"

@@ -6,16 +6,6 @@
   user-select: none;
 }
 
-#rotate-area {
-  position: relative;
-  top: 8em;
-  height: 100%;
-  padding: 1rem;
-  overflow: hidden;
-  touch-action: none;
-  user-select: none;
-}
-
 #arrow {
   display: block;
   margin: auto;
@@ -28,10 +18,10 @@
   font-size: 2em;
   position: absolute;
   left: 1rem;
-  top: 1rem;
+  top: 9rem;
 }
 
-#gesture-area {
+.gesture-area {
   position: absolute;
   top: 10em;
   touch-action: none;

@@ -1,12 +1,6 @@
 <script setup></script>
 
 <template>
-  <div
-    class="background"
-    :style="{
-      backgroundImage: `url('/src/assets/backgroundImage.jpg')`,
-    }"
-  ></div>
   <div class="rootContainer">
     <router-view> </router-view>
   </div>

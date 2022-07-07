@@ -12,12 +12,7 @@ if (!pin) {
 </script>
 
 <template>
-  <div
-    class="background"
-    :style="{
-      backgroundImage: `url('/src/assets/backgroundImage.jpg')`,
-    }"
-  ></div>
+  <img class="background" src="../assets/backgroundImage.jpg" />
   <div class="loginView">
     <div class="logoContainer">
       <img
