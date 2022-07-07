@@ -96,7 +96,7 @@ function toggleFullScreen() {
         class="navItem"
         :title="app.name"
       >
-        <img :src="app.image.nav" alt="fact finder icon" />
+        <img :src="app.image.nav" alt="app icon" />
       </router-link>
     </div>
   </header>
