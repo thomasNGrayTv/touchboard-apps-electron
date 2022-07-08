@@ -16,7 +16,6 @@
 
 .dashboardMain .dashboardTitle {
   color: white;
-  width: 20em;
   font-size: 3em;
   font-weight: 700;
 }
@@ -201,6 +200,7 @@
 */
 .dashboardMain .headerSection {
   display: flex;
+  justify-content: space-between;
 }
 
 .dashboardMain .favoritesContainer h3 {
